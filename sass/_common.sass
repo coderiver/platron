@@ -59,6 +59,13 @@ body
 	line-height: 20px
 	font-family: 'Open Sans', sans-serif
 	background: #e9eef2
+	&.is-open-popup
+		padding-right: 15px
+		overflow: hidden
+		.popup
+			z-index: 200
+			visibility: visible
+			+opacity(1)
 	a
 		text-decoration: none
 		+transition(all .1s linear)
@@ -829,9 +836,13 @@ body
 	left: 0
 	right: 0
 	bottom: 0
-	z-index: 200
+	overflow-y: auto
+	z-index: -1
+	visibility: hidden
+	cursor: pointer
+	+opacity(0)
 	background: rgba(#000, .5)
-	display: none
+	// +transition(all .2s linear)
 	.popup__header
 		position: relative
 		padding: 25px 0 16px
@@ -839,10 +850,12 @@ body
 		color: #FFFFFF
 		text-align: center
 		line-height: 33px
+		z-index: 1
+		cursor: default
 		+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
 		background: #E75040
-	.ico 
-		margin-right: 24px
+		.ico 
+			margin-right: 24px
 	.popup__close
 		position: absolute
 		top: 20px
@@ -856,7 +869,14 @@ body
 	.popup__in
 		position: relative
 		margin: 120px auto
+		padding: 40px 30px 25px
 		max-width: 540px
+		background: #FFFFFF
+		z-index: 1
+		cursor: default
+		+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
+		+border-radius(8px)
+		+box
 	.popup__btn-close
 		position: absolute
 		top: 10px
@@ -864,6 +884,8 @@ body
 		background-color: none
 		+svg(ico-close, 16, 16)
 	.popup__title
+		margin-bottom: 25px
+		text-align: center
 		font-size: 30px
 		color: #4A4A4A
 		font-weight: 300
@@ -872,12 +894,19 @@ body
 		.form__label,
 		.form__field
 			display: inline-block
+		.form__label
+			width: 60px
+		.form__field
+			width: 420px
 	.form__bottom
+		margin-top: 43px
 		font-size: 0
 		.btn
 			margin-left: 20px
 			&:first-child
 				margin-left: 0
+			&.btn_white
+				padding: 15px 19px
 
 
 

@@ -169,7 +169,7 @@ head.ready(function() {
 					if ($(this).hasClass('is-disable')) {
 						$(this).removeClass('is-active');
 					}
-					
+
 					alfa_click();
 
 					return false;
@@ -196,5 +196,18 @@ head.ready(function() {
 
 	};
 
+	// popup
+	function popup(){
+		$('.js-open-popup').on('click', function(){
+			$('body').addClass('is-open-popup');
+		});
+		$('.js-popup, .js-popup-close').on('click', function(){
+			$('body').removeClass('is-open-popup');
+			return false;
+		});
+		$( ".js-popup-in" ).click(function( event ) {
+			event.stopPropagation();
+		});
+	}popup();
 
 });
