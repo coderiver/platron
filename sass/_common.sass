@@ -49,6 +49,11 @@
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic-ext")
 
++font(ruble, ALSRubl)  
+=ruble
+	font-family: "ruble", Arial, sans-serif
+	font-weight: normal
+
 body
 	font-size: 14px 
 	line-height: 20px
@@ -95,6 +100,70 @@ body
 		+svg(lock, 20, 24)
 	&.ico_info
 		+svg(ico-info, 16, 16)
+	&.ico_qiwi
+		+svg(qiwi, 80, 32)
+	&.ico_webmaney
+		+svg(webmoney, 110, 28)
+	&.ico_yand
+		+svg(yandexmoney, 80, 38)
+	&.ico_wallet
+		+svg(wallet-one, 45, 39)
+	&.ico_paypal
+		+svg(paypal, 90, 27)
+	&.ico_mts
+		+svg(mts, 69, 26)
+	&.ico_beeline
+		+svg(beeline, 88, 27)
+	&.ico_megafon
+		+svg(megafon, 100, 27)
+	&.ico_tele2
+		+svg(tele2, 60, 34)
+	&.ico_eleksnet
+		+svg(eleksnet, 103, 28)
+	&.ico_ecrn
+		+svg(ecrn, 90, 32)
+	&.ico_bankpetrocommerz
+		+svg(bankpetrocommerz, 80, 40)
+	&.ico_cyberplat
+		+svg(cyberplat, 62, 40)
+	&.ico_ocean
+		+s(ocean)
+	&.ico_euronetwork
+		+svg(euronetwork, 98, 13)
+	&.ico_svyaznoy
+		+svg(svyaznoy, 100, 32)
+	&.ico_contact
+		+s(contact)
+	&.ico_unystreem
+		+svg(unystreem, 70, 37)
+	&.ico_payment-receipt
+		+svg(payment-receipt, 123, 28)
+	&.ico_sberbank
+		+svg(sberbank, 90, 27)
+	&.ico_bank
+		+svg(bank, 110, 36)
+	&.ico_faktura-ru
+		+s(faktura-ru)
+	&.ico_psb
+		+svg(psb, 90, 48)
+	&.ico_vtb24
+		+svg(vtb24, 80, 23)
+	&.ico_russian-standard
+		+s(russian-standard)
+	&.ico_alfabank
+		+svg(alfabank, 100, 30)
+	&.ico_handybank
+		+svg(handybank, 120, 28)
+	&.ico_error
+		+svg(ico-error-white, 39, 39)
+
+// ruble
+.ruble
+	+ruble
+
+// display: none
+.js-hide
+	display: none !important
 
 // btn
 .btn
@@ -103,6 +172,7 @@ body
 	line-height: 1
 	+border-radius(4px)
 	+transition(all .1s linear)
+	font-family: 'Open Sans', sans-serif
 	display: inline-block
 	+box                                          
 	&.btn_white
@@ -117,16 +187,45 @@ body
 		&:active
 			+box-shadow(inset 0px 2px 2px 0px rgba(0,0,0,0.20))
 	&.btn_green
+		position: relative
 		padding: 15px 24px
 		color: #fff
 		font-weight: 600
-		+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(65,117,5,0.18))
 		+background-image(linear-gradient(-180deg, #95DD3A 0%, #429321 100%))
-		&:hover
+		+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.20), inset 0 0 0 1px rgba(65,117,5,0.18))
+		span
+			position: relative
+			z-index: 1
+			display: inline-block
+		&:after,
+		&:before
+			position: absolute
+			content: ''
+			top: 1px
+			left: 1px
+			right: 1px
+			bottom: 1px
+			+transition(all .1s linear)
+		&:before
+			+opacity(0)
 			+background-image(linear-gradient(-180deg, #82C52D 0%, #367A1A 100%))
-		&:active
+		&:after
+			+opacity(0)
 			+background-image(linear-gradient(0deg, #7DBF28 0%, #429321 100%))
-			border: 1px solid rgba(65,117,5,0.18)
+		&:hover
+			&:before
+				+opacity(1)
+		&:active
+			+box-shadow(0px 1px 2px 0px rgba(65,117,5,0.18), inset 0 0 0 1px rgba(65,117,5,0.18))
+			&:before
+				+opacity(0)
+			&:after
+				+opacity(1)
+
+// out
+.out
+	min-height: 100%
+	padding-bottom: 174px
 
 // header
 .header
@@ -193,7 +292,7 @@ body
 		+box
 		&.is-active
 			height: auto
-			z-index: 2
+			z-index: 3
 			+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
 			.order__more
 				display: none
@@ -306,7 +405,7 @@ body
 // link
 .link
 	position: relative
-	padding: 22px 12px 22px
+	padding: 20px 12px 20px
 	color: #797A7B
 	border-bottom: 1px solid #e5e7ea
 	background: #f6f7f8
@@ -349,10 +448,13 @@ body
 			&:first-child
 				margin-left: 0
 
+// form
 .form
+	margin: 20px 0
+	font-size: 0
+	+user-select(none)
 	&.form_card
 		position: relative
-		margin-top: 20px
 		width: 530px
 		height: 240px
 		.form__in
@@ -360,6 +462,9 @@ body
 			z-index: 3
 		input
 			text-transform: uppercase
+	&.form_mail
+		margin: 8px 0 0
+		display: none
 	input
 		padding: 0 8px
 		height: 32px
@@ -405,7 +510,7 @@ body
 				vertical-align: top
 				display: inline-block
 				& + span
-					margin: 0 5px
+					margin: 0 8px
 					color: #A9A9A9
 					font-size: 20px
 					line-height: 32px
@@ -421,8 +526,125 @@ body
 		font-size: 0
 	.form__label
 		color: #666666
+		font-size: 14px
 		font-weight: 600
 		line-height: 22px
+	.form__item
+		margin-left: 4%
+		width: 48%
+		vertical-align: top
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		&.form__item_alfa
+			display: none
+		&.is-active
+			display: inline-block
+	.form__text
+		margin-top: 5px
+		font-size: 13px
+		color: #9B9B9B
+		&.form__text_nowrap
+			white-space: nowrap
+
+// checkbox
+.checkbox
+	position: relative
+	color: #4A4A4A
+	cursor: pointer
+	+user-select(none)
+	&:before
+		position: absolute
+		content: ''
+		top: 50%
+		left: 0
+		margin-top: -9px
+		height: 16px
+		width: 16px
+		background: #FFFFFF
+		border: 1px solid #CDD0D4
+		+box-shadow(inset 0px 2px 4px 0px rgba(0,0,0,0.10))
+		+border-radius(2px)
+	input
+		position: absolute
+		top: 50%
+		left: 0
+		margin-top: -9px
+		height: 16px
+		width: 16px
+		z-index: 2
+		cursor: pointer
+		+opacity(0)
+		&:checked
+			& + span
+				&:after,
+				&:before
+					display: block
+	span
+		position: relative
+		padding-left: 26px
+		&:before
+			position: absolute
+			content: ''
+			height: 2px
+			left: 4px
+			top: 9px
+			width: 15px
+			background: #CDD0D4
+			z-index: 1
+			+rotate(-54)
+			display: none
+		&:after
+			position: absolute
+			content: ''
+			top: 13px
+			left: 2px
+			height: 2px
+			width: 7px
+			background: #CDD0D4
+			z-index: 1
+			+rotate(36)
+			display: none
+
+// checkout
+.checkout
+	margin-top: 30px
+	padding: 10px 10px 10px 25px
+	color: #666666
+	+border-radius(6px)
+	background: #FFF9DF
+	+clr
+	.checkout__left
+		float: left
+		max-width: 400px
+		line-height: 50px
+	.checkout__text
+		display: inline-block
+	.price
+		margin: 0 5px
+		font-size: 28px
+		vertical-align: top
+	.checkout__text,
+	.currency
+		vertical-align: middle
+	.btn
+		float: right
+
+// currency
+.currency
+	opacity: 0.49
+	color: #333333
+	font-size: 14px
+	font-style: italic
+	line-height: 19px
+	display: inline
+
+// price
+.price
+	font-size: 22px
+	font-weight: 600
+	color: #4A4A4A
+	display: inline-block
 
 // bg-card
 .bg-card
@@ -452,14 +674,16 @@ body
 .info
 	position: absolute
 	right: 0
-	top: 50%
+	top: 54%
 	cursor: pointer
 	display: inline-block
 	.ico
 		cursor: pointer
 		+transition(all .1s linear)
 		+opacity(.4)
-	&:hover,
+	&:hover
+		.ico
+			+opacity(1)
 	&.is-active
 		.ico
 			+opacity(1)
@@ -490,7 +714,6 @@ body
 			bottom: -10px
 			+arr(20, 10, rgba(0,0,0,0.66), b)
 
-
 // title
 .title
 	font-size: 24px
@@ -500,9 +723,54 @@ body
 	.ico
 		margin: 6px 12px 0 0
 
+// payment
+.payment
+	padding-top: 7px
+	font-size: 0
+	overflow: hidden
+	.payment__in
+		padding: 1px
+		margin: 0 -2% -2% 0
+	.payment__item
+		padding: 0 5px 8px
+		margin: 0 2% 2% 0
+		width: 23%
+		text-align: center
+		vertical-align: top
+		border: 1px solid #E5E7EA
+		+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.03))
+		+border-radius(4px)
+		+background-image(linear-gradient(-180deg, #FFFFFF 50%, #FCFCFD 100%))
+		display: inline-block
+		+box
+		&:hover
+			border: 1px solid #D4D8DD
+			+box-shadow(0px 0px 3px 0px rgba(114,191,48,0.30), 0px 1px 2px 0px rgba(0,0,0,0.03))
+			+background-image(linear-gradient(-180deg, #FFFFFF 50%, #F3F3F7 100%))
+		&.is-active
+			border-color: #73BF30
+			+border-radius(5px)
+			+box-shadow(inset 0px 3px 10px 0px rgba(101,123,145,0.24), 0 0 0 1px #73BF30)
+			+background-image(linear-gradient(0deg, #FFFFFF 0%, #F6F7F8 100%))
+		&.is-disable
+			border-radius: 5px
+			cursor: default
+			.ico
+				+opacity(.3)
+			&:hover
+				border: 1px solid #E5E7EA
+				+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.03))
+				+background-image(linear-gradient(-180deg, #FFFFFF 50%, #FCFCFD 100%))
+	.payment__ico
+		height: 65px
+		line-height: 65px
+		.ico
+			vertical-align: middle
+
 // footer
 .footer
-	margin: 30px 0
+	margin-top: -144px
+	padding-bottom: 30px
 	.footer__in
 		@extend %in
 	.footer__left
@@ -553,101 +821,63 @@ body
 		display: inline-block
 		.ico
 			vertical-align: middle
-			&:hover
-				+opacity(.8)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// popup
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 200
+	background: rgba(#000, .5)
+	display: none
+	.popup__header
+		position: relative
+		padding: 25px 0 16px
+		font-size: 24px
+		color: #FFFFFF
+		text-align: center
+		line-height: 33px
+		+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
+		background: #E75040
+	.ico 
+		margin-right: 24px
+	.popup__close
+		position: absolute
+		top: 20px
+		right: 20px
+		color: #FFFFFF
+		font-size: 13px
+		line-height: 18px
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+	.popup__in
+		position: relative
+		margin: 120px auto
+		max-width: 540px
+	.popup__btn-close
+		position: absolute
+		top: 10px
+		right: 10px
+		background-color: none
+		+svg(ico-close, 16, 16)
+	.popup__title
+		font-size: 30px
+		color: #4A4A4A
+		font-weight: 300
+		line-height: 40px
+	.form
+		.form__label,
+		.form__field
+			display: inline-block
+	.form__bottom
+		font-size: 0
+		.btn
+			margin-left: 20px
+			&:first-child
+				margin-left: 0
 
 
 
