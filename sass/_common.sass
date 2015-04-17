@@ -883,6 +883,9 @@ body
 		right: 10px
 		background-color: none
 		+svg(ico-close, 16, 16)
+		+transition(all .2 linear)
+		&:hover
+			+opacity(.7)
 	.popup__title
 		margin-bottom: 25px
 		text-align: center

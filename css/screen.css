@@ -253,7 +253,8 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .popup .popup__close { position: absolute; top: 20px; right: 20px; color: white; font-size: 13px; line-height: 18px; text-decoration: underline; }
 .popup .popup__close:hover { text-decoration: none; }
 .popup .popup__in { position: relative; margin: 120px auto; padding: 40px 30px 25px; max-width: 540px; background: white; z-index: 1; cursor: default; -moz-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.popup .popup__btn-close { position: absolute; top: 10px; right: 10px; background-color: none; background: url("../img/svg/ico-close.svg") no-repeat 0 0; -moz-background-size: 16px 16px; -o-background-size: 16px 16px; -webkit-background-size: 16px 16px; background-size: 16px 16px; width: 16px; height: 16px; display: inline-block; }
+.popup .popup__btn-close { position: absolute; top: 10px; right: 10px; background-color: none; background: url("../img/svg/ico-close.svg") no-repeat 0 0; -moz-background-size: 16px 16px; -o-background-size: 16px 16px; -webkit-background-size: 16px 16px; background-size: 16px 16px; width: 16px; height: 16px; display: inline-block; -moz-transition: all 0.2 linear; -o-transition: all 0.2 linear; -webkit-transition: all 0.2 linear; transition: all 0.2 linear; }
+.popup .popup__btn-close:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .popup .popup__title { margin-bottom: 25px; text-align: center; font-size: 30px; color: #4a4a4a; font-weight: 300; line-height: 40px; }
 .popup .form .form__label, .popup .form .form__field { display: inline-block; }
 .popup .form .form__label { width: 60px; }
