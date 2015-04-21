@@ -114,7 +114,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .logo-platron { margin: 11px 0 0 35px; background: url("../img/svg/logo-platron.svg") no-repeat 0 0; -moz-background-size: 103px 31px; -o-background-size: 103px 31px; -webkit-background-size: 103px 31px; background-size: 103px 31px; width: 103px; height: 31px; display: inline-block; display: inline-block; }
 
 .order { position: relative; width: 540px; height: 50px; color: #4a4a4a; font-size: 13px; line-height: 20px; border-left: 1px solid #f5f5f6; border-right: 1px solid #f5f5f6; }
-.order .order__in { position: absolute; padding: 13px 40px 40px; top: -18px; left: 0; width: 100%; height: 72px; overflow: hidden; -moz-border-radius: 0 0 6px 6px; -webkit-border-radius: 0; border-radius: 0 0 6px 6px; background: white; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.order .order__in { position: absolute; padding: 13px 30px 40px; top: -18px; left: 0; width: 100%; height: 72px; overflow: hidden; -moz-border-radius: 0 0 6px 6px; -webkit-border-radius: 0; border-radius: 0 0 6px 6px; background: white; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .order .order__in.is-active { height: auto; z-index: 3; -moz-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); }
 .order .order__in.is-active .order__more { display: none; }
 .order .order__in.is-active .order__close { display: block; }
@@ -240,12 +240,12 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 
 .price { font-size: 22px; font-weight: 600; color: #4a4a4a; display: inline-block; }
 
-.bg-card { position: absolute; top: 0; left: 0; height: 230px; width: 370px; background: url(../img/bgcard.png) no-repeat 0 0; z-index: 2; -moz-box-shadow: inset -1px 0 0 #e5e7ea; -webkit-box-shadow: inset -1px 0 0 #e5e7ea; box-shadow: inset -1px 0 0 #e5e7ea; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+.bg-card { position: absolute; top: 0; left: 0; height: 230px; width: 370px; background: url(../img/bgcard.png) no-repeat 0 0; z-index: 2; -moz-box-shadow: inset -1px 0 0 #e5e7ea, 0px 1px 2px 0px rgba(0, 0, 0, 0.05); -webkit-box-shadow: inset -1px 0 0 #e5e7ea, 0px 1px 2px 0px rgba(0, 0, 0, 0.05); box-shadow: inset -1px 0 0 #e5e7ea, 0px 1px 2px 0px rgba(0, 0, 0, 0.05); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
 .bg-card.bg-card_cvv { top: 10px; left: 160px; z-index: 1; }
 .bg-card.bg-card_cvv:before { position: absolute; content: ""; left: 0; top: 30px; right: 0; height: 40px; background: #4f4f4f; }
 
 .info { position: absolute; right: 0; top: 54%; cursor: pointer; display: inline-block; }
-.info .ico { cursor: pointer; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40); opacity: 0.4; }
+.info .ico { cursor: pointer; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .info:hover .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info.is-active .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info.is-active .info__window { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
@@ -259,7 +259,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 
 .payment { padding-top: 7px; font-size: 0; overflow: hidden; }
 .payment .payment__in { padding: 1px; margin: 0 -2% -2% 0; }
-.payment .payment__item { padding: 0 5px 8px; margin: 0 2% 2% 0; width: 23%; text-align: center; vertical-align: top; border: 1px solid #e5e7ea; -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background-image: -moz-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: -webkit-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: linear-gradient(-180deg, #ffffff 50%, #fcfcfd 100%); display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.payment .payment__item { padding: 0 5px 8px; margin: 0 2% 2% 0; width: 23%; min-height: 129px; text-align: center; vertical-align: top; border: 1px solid #e5e7ea; -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background-image: -moz-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: -webkit-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: linear-gradient(-180deg, #ffffff 50%, #fcfcfd 100%); display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .payment .payment__item:hover { border: 1px solid #d4d8dd; -moz-box-shadow: 0px 0px 3px 0px rgba(114, 191, 48, 0.3), 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -webkit-box-shadow: 0px 0px 3px 0px rgba(114, 191, 48, 0.3), 0px 1px 2px 0px rgba(0, 0, 0, 0.03); box-shadow: 0px 0px 3px 0px rgba(114, 191, 48, 0.3), 0px 1px 2px 0px rgba(0, 0, 0, 0.03); background-image: -moz-linear-gradient(270deg, #ffffff 50%, #f3f3f7 100%); background-image: -webkit-linear-gradient(270deg, #ffffff 50%, #f3f3f7 100%); background-image: linear-gradient(-180deg, #ffffff 50%, #f3f3f7 100%); }
 .payment .payment__item.is-active { border-color: #73bf30; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: inset 0px 3px 10px 0px rgba(101, 123, 145, 0.24), 0 0 0 1px #73bf30; -webkit-box-shadow: inset 0px 3px 10px 0px rgba(101, 123, 145, 0.24), 0 0 0 1px #73bf30; box-shadow: inset 0px 3px 10px 0px rgba(101, 123, 145, 0.24), 0 0 0 1px #73bf30; background-image: -moz-linear-gradient(90deg, #ffffff 0%, #f6f7f8 100%); background-image: -webkit-linear-gradient(90deg, #ffffff 0%, #f6f7f8 100%); background-image: linear-gradient(0deg, #ffffff 0%, #f6f7f8 100%); }
 .payment .payment__item.is-disable { border-radius: 5px; cursor: default; }
