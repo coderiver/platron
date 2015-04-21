@@ -60,7 +60,6 @@ body
 	font-family: 'Open Sans', sans-serif
 	background: #e9eef2
 	&.is-open-popup
-		padding-right: 15px
 		overflow: hidden
 		.popup
 			z-index: 200
@@ -163,6 +162,16 @@ body
 		+svg(handybank, 120, 28)
 	&.ico_error
 		+svg(ico-error-white, 39, 39)
+	&.ico_clock
+		+svg(ico-clock, 78, 78)
+	&.ico_print
+		+svg(ico-print, 23, 23)
+	&.ico_info-gray
+		+svg(info-gray, 16, 16)
+	&.ico_selected
+		+svg(ico-selected, 78, 78)
+	&.ico_error
+		+svg(ico-error, 80, 80)
 
 // ruble
 .ruble
@@ -228,11 +237,15 @@ body
 				+opacity(0)
 			&:after
 				+opacity(1)
+	&.btn_big
+		padding: 20px 33px
+		height: 60px
 
 // out
 .out
 	min-height: 100%
 	padding-bottom: 174px
+	+box
 
 // header
 .header
@@ -256,6 +269,8 @@ body
 	&.is-active
 		.logo
 			display: none
+		.logo-shop
+			display: block
 
 // logo
 .logo
@@ -269,6 +284,7 @@ body
 	display: inline-block
 	vertical-align: top
 .logo-shop
+	display: none
 	img
 		display: block
 .logo-platron
@@ -363,21 +379,103 @@ body
 // wrapper
 .wrapper
 	position: relative
+	min-height: 589px
 	@extend %in
 	+border-radius(8px)
 	overflow: hidden
 	background: #fff
 	+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.10))
 	+clr
-	&:before
-		position: absolute
-		content: ''
-		top: 0
-		left: 0
-		bottom: 0
-		width: 239px
-		border-right: 1px solid #e5e7ea
-		background: #f6f7f8
+	&.wrapper_tabs
+		min-height: auto
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			bottom: 0
+			width: 239px
+			border-right: 1px solid #e5e7ea
+			background: #f6f7f8
+
+// center
+.center
+	position: relative
+	margin: 0 auto
+	padding: 65px 0 42px
+	width: 622px
+	text-align: center
+	&.center_mod
+		padding-top: 120px
+		.center__link-wrap
+			margin-top: 40px
+		.center__text
+			text-align: center
+	.center__in
+		margin: 0 auto
+		width: 460px
+	.center__text
+		margin-top: 20px
+		color: #797A7B
+		text-align: left
+	.center__link-wrap
+		margin-top: 30px
+	.center__link
+		text-decoration: underline
+		color: #00C7F4
+		line-height: 19px
+		&:hover
+			text-decoration: none
+	.btn.btn_green
+		margin: 40px 0 0
+		.ico
+			margin-right: 18px
+
+// info-yellow
+.info-yellow
+	margin: 48px auto 42px
+	max-width: 501px
+	padding: 18px 24px
+	color: #797A7B
+	+border-radius(8px)
+	background: #FFF9DF
+	+box
+	&.info-yellow_mod
+		padding: 24px
+	.info-yellow__row
+		position: relative
+		margin-top: 18px
+		padding-left: 26px
+		letter-spacing: -0.2px
+		text-align: left
+		&:first-child
+			margin-top: 0
+		.ico
+			position: absolute
+			top: 3px
+			left: 0
+	.info-yellow__title
+		text-align: center
+		font-weight: 600
+		color: #666666
+	.info-yellow__number,
+	.info-yellow__price
+		font-size: 24px
+		color: #333333
+		line-height: 33px
+		text-align: center
+		text-transform: uppercase
+
+// ico-top
+.ico-top
+	position: absolute
+	top: 22px
+	left: 50%
+	display: inline-block
+	+translate(-50%, 0)
+
+.ico-center
+	margin: 25px 0
 
 // tabs
 .tabs
@@ -553,6 +651,15 @@ body
 		color: #9B9B9B
 		&.form__text_nowrap
 			white-space: nowrap
+	.form__bottom
+		margin-top: 43px
+		font-size: 0
+		.btn
+			margin-left: 20px
+			&:first-child
+				margin-left: 0
+			&.btn_white
+				padding: 15px 19px
 
 // checkbox
 .checkbox
@@ -730,6 +837,12 @@ body
 	.ico
 		margin: 6px 12px 0 0
 
+.title-big
+	font-size: 30px
+	color: #4A4A4A
+	font-weight: 300
+	line-height: 40px
+
 // payment
 .payment
 	padding-top: 7px
@@ -768,6 +881,8 @@ body
 				border: 1px solid #E5E7EA
 				+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.03))
 				+background-image(linear-gradient(-180deg, #FFFFFF 50%, #FCFCFD 100%))
+		.price
+			width: 100%
 	.payment__ico
 		height: 65px
 		line-height: 65px
@@ -829,6 +944,68 @@ body
 		.ico
 			vertical-align: middle
 
+// countbox
+.countbox
+	color: #666666
+	.countbox__in
+		margin: 0 auto
+		padding: 20px 3px
+		max-width: 340px
+		font-size: 0
+		background: #FFF9DF
+		+border-radius(8px)
+		+box
+	.countbox__title
+		margin-bottom: 10px
+		font-weight: 600
+		color: #666666
+	.countbox__info
+		margin-top: 12px
+		opacity: 0.49
+		font-style: italic
+		font-size: 14px
+		color: #333333
+
+// dash
+.dash
+	position: relative
+	width: 25%
+	text-align: center
+	font-weight: 600
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: -1px
+		bottom: 0
+		width: 2px
+		background: rgba(0,0,0,0.10)
+		border-radius: 1px
+	&:first-child
+		.digit
+			&:first-child
+				display: none
+		&:before
+			display: none
+	.bottom
+		display: none
+	.dash__text
+		margin-top: 16px
+		font-size: 14px
+
+// digit
+.digit
+	height: 25px
+	font-size: 32px
+	font-weight: 600
+	color: #4A4A4A
+	line-height: 23px
+	vertical-align: top
+	overflow: hidden
+	display: inline-block
+
 // popup
 .popup
 	position: fixed
@@ -842,6 +1019,7 @@ body
 	cursor: pointer
 	+opacity(0)
 	background: rgba(#000, .5)
+	+box
 	// +transition(all .2s linear)
 	.popup__header
 		position: relative
@@ -868,7 +1046,7 @@ body
 			text-decoration: none
 	.popup__in
 		position: relative
-		margin: 120px auto
+		margin: 120px auto 30px
 		padding: 40px 30px 25px
 		max-width: 540px
 		background: #FFFFFF
@@ -901,15 +1079,6 @@ body
 			width: 60px
 		.form__field
 			width: 420px
-	.form__bottom
-		margin-top: 43px
-		font-size: 0
-		.btn
-			margin-left: 20px
-			&:first-child
-				margin-left: 0
-			&.btn_white
-				padding: 15px 19px
 
 
 

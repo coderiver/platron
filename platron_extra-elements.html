@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <meta name="viewport" content="width=1200"> -->
+	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
+	<link rel="stylesheet" media="all" href="css/screen.css" >
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<div class="in" style="width: 664px">
+	<!-- form -->
+	<div class="form">
+		<div class="form__col">
+			<div class="form__label">E-mail</div>
+			<div class="form__field">
+				<input type="text" name="email" placeholder="ivanov@gmail.com">
+			</div>
+			<div class="form__text">Нужен для оповещения о результатах платежа</div>
+		</div>
+		<div class="form__col">
+			<div class="form__label">E-mail</div>
+			<div class="form__field">
+				<input class="error" type="text" name="email" placeholder="ivanov@gmail.com">
+			</div>
+			<div class="form__text">Нужен для оповещения о результатах платежа</div>
+		</div>
+	</div>
+	<div style="margin-top: 20px">
+		<button class="btn btn_green"><span>Отложить оплату</span></button>
+	</div>
+	<div style="margin-top: 20px">
+		<button class="btn btn_white btn_big" type="button">Отложить оплату</button>
+	</div>
+	<!-- payment -->
+	<div class="payment" style="margin-top: 20px">
+		<div class="payment__in">
+			<a href="#" class="payment__item">
+				<div class="payment__ico"><span class="ico ico_qiwi"></span></div>
+				<div class="price">148 500 <span class="ruble">₽</span></div>
+				<span class="currency">$6900.44</span>
+			</a>
+			<a href="#" class="payment__item">
+				<div class="payment__ico"><span class="ico ico_qiwi"></span></div>
+				<div class="price">148 500 <span class="ruble">₽</span></div>
+				<span class="currency">$6900.44</span>
+			</a>
+			<a href="#" class="payment__item is-active">
+				<div class="payment__ico"><span class="ico ico_webmaney"></span></div>
+				<div class="price">148 500 <span class="ruble">₽</span></div>
+				<span class="currency">$6900.44</span>
+			</a>
+			<a href="#" class="payment__item is-disable">
+				<div class="payment__ico"><span class="ico ico_yand"></span></div>
+				<div class="price">148 500 <span class="ruble">₽</span></div>
+				<span class="currency">$6900.44</span>
+			</a>
+		</div>
+	</div>
+	
+</div>
+<!-- load scripts -->
+<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+</body>
+</html>

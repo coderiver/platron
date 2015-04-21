@@ -3,6 +3,7 @@ head.ready(function() {
 	// click
 	$('body').on('click', function(){
 		$('.js-info').removeClass('is-active');
+		$('.js-order-in').removeClass('is-active');
 	});
 
 	// order text
@@ -27,94 +28,92 @@ head.ready(function() {
 			parent.removeClass('is-active');
 			return false;
 		});
+		parent.click(function( event ) {
+			event.stopPropagation();
+		});
 	}
 	order_info();
 
 	// tabs
 	function tabs(){
+		$('body').each(function(){
+			var	tabs = ['#card', '#robox', '#purse', '#terminals', '#cashbox', '#from-your-balance', '#internet-banking'],
+				tabList = $('.js-tabs');
+				ltie9 = $.browser.msie && $.browser.version <= 9;
+				
+			if ($(this).find(tabList).length) {
+				// смена таба
+				function changeTab(tabId){
 
-		var	tabs = ['#card', '#robox', '#purse', '#terminals', '#cashbox', '#from-your-balance', '#internet-banking'],
-			tabList = $('.js-tabs');
-			ltie9 = $.browser.msie && ($.browser.version <= 9);
-			
-		// смена таба
-		function changeTab(tabId){
+					tabList.find(".js-tab-link.is-active").removeClass("is-active");
+					$('.js-tabs-cont').removeClass("is-active");
+					$(tabId).addClass("is-active");
+					tabList.find('.js-tab-link').each(function () {
+						var attr = $(this).attr('href');
+						if (attr == tabId) {
+							$(this).addClass('is-active');
+						};
+					});
 
-			tabList.find(".js-tab-link.is-active").removeClass("is-active");
-			$('.js-tabs-cont').removeClass("is-active");
-			$(tabId).addClass("is-active");
-			tabList.find('.js-tab-link').each(function () {
-				var attr = $(this).attr('href');
-				if (attr == tabId) {
-					$(this).addClass('is-active');
+					if (!tabId) {
+						tabList.find('.tabs__item:first .js-tab-link').addClass("is-active");
+						window.location.hash = tabs[0];
+						$('html, body').animate({
+							scrollTop: 0
+						});
+					}
+					payment_method();
+					alfa_click();
+
+				}
+
+				// проверка хеша
+				function checkHash(){
+					var	tabId = window.location.hash,
+						result = false;
+
+					// для ИЕ6-8 эмуляция :target
+					function setTarget(obj){
+						$('.js-tabs-cont').removeClass('is-target');
+						$(tabId).addClass('is-target');
+					};
+
+					// при загрузке страницы проверяем какую вкладку следует открыть	
+					$.each(tabs, function(){
+
+						if (tabId == this) 
+						{
+							changeTab(tabId);
+							result = true;
+							ltie9 ? setTarget(tabId) : false;
+
+							return false;
+						};
+					});
+
+					if (result == false) changeTab();
 				};
-			});
+				checkHash();			
+							
+				$('.js-tab-link').on('click', function () {
+					var page = $(this).attr("href");
+					var pageTop = $(page).offset().top;
 
-			if (!tabId) {
-				tabList.find('.tabs__item:first .js-tab-link').addClass("is-active");
-				window.location.hash = tabs[0];
-				$('html, body').animate({
-					scrollTop: 0
-				});
-			}
-			payment_method();
-			alfa_click();
-
-		}
-
-		// проверка хеша
-		function checkHash(){
-			var	tabId = window.location.hash,
-				result = false;
-
-			// для ИЕ6-8 эмуляция :target
-			function setTarget(obj){
-				$('.js-tabs-cont').removeClass('is-target');
-				$(tabId).addClass('is-target');
-			};
-
-			// при загрузке страницы проверяем какую вкладку следует открыть	
-			$.each(tabs, function(){
-
-				if (tabId == this) 
-				{
-					changeTab(tabId);
-					result = true;
-					ltie9 ? setTarget(tabId) : false;
-
+					$('html, body').animate({
+						scrollTop: 100
+					}, 600, function () {
+						window.location.hash = page;
+						// отслеживаем изменение хеша
+						$(window).bind('hashchange', function() {
+							checkHash();
+						});
+					});
 					return false;
-				};
-			});
 
-			if (result == false) changeTab();
-		};
-		checkHash();			
-					
-		// $('.js-tab-link').on('click', function () {
-		// 	$('html, body').animate({
-		// 		scrollTop: 100
-		// 	});
-		// });				
-		// // отслеживаем изменение хеша
-		// $(window).bind('hashchange', function() {
-		// 	checkHash();
-		// });
-		$('.js-tab-link').on('click', function () {
-			var page = $(this).attr("href");
-			var pageTop = $(page).offset().top;
-
-			$('html, body').animate({
-				scrollTop: 100
-			}, 600, function () {
-				window.location.hash = page;
-				// отслеживаем изменение хеша
-				$(window).bind('hashchange', function() {
-					checkHash();
-				});
-			});
-			return false;
-
-		});		
+				});	
+			}
+			
+		});	
 	}
 	tabs();
 
@@ -209,5 +208,30 @@ head.ready(function() {
 			event.stopPropagation();
 		});
 	}popup();
+
+	// timer
+	$('body').each(function(){
+		if ($(this).find('#countbox').length) {
+			$('#countbox').countDown({
+				targetOffset: {
+					'day':		1,
+					'month':	0,
+					'year':		0,
+					'hour':		12,
+					'min':		54,
+					'sec':		42
+				},
+				omitWeeks: true
+			});
+		};
+		// tabs();
+	});
+	
+	// phone number
+	$('.js-phone-number').on('input', function(){
+		$('.js-phone-number').val( $(this).val() );
+	});
+
+
 
 });
