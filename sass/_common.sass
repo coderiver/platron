@@ -65,6 +65,24 @@ body
 			z-index: 200
 			visibility: visible
 			+opacity(1)
+	&.is-open-menu
+		overflow: hidden
+		.btn-menu
+			position: fixed
+			top: 15px
+			left: 240px
+			width: 78px
+			z-index: 100
+			background: #f6f7f8
+			&:hover
+				background: #fff
+		.tabs__group
+			left: 0
+			overflow-y: auto
+		.overlay
+			+opacity(1)
+			z-index: 99
+			visibility: visible
 	a
 		text-decoration: none
 		+transition(all .1s linear)
@@ -74,9 +92,10 @@ body
 
 // in
 .in
-	width: 940px
+	max-width: 940px
 	margin: 0 auto
 	+box
+	+clr
 %in
 	@extend .in
 
@@ -166,6 +185,8 @@ body
 		+svg(ico-clock, 78, 78)
 	&.ico_print
 		+svg(ico-print, 23, 23)
+		+r(720)
+			margin-top: -3px
 	&.ico_info-gray
 		+svg(info-gray, 16, 16)
 	&.ico_selected
@@ -190,7 +211,11 @@ body
 	+transition(all .1s linear)
 	font-family: 'Open Sans', sans-serif
 	display: inline-block
-	+box                                          
+	+box
+	+r(720)
+		height: 40px
+	+r(460)
+		width: 100%                           
 	&.btn_white
 		padding: 15px 14px
 		color: #666
@@ -202,6 +227,8 @@ body
 			+opacity(0.75)
 		&:active
 			+box-shadow(inset 0px 2px 2px 0px rgba(0,0,0,0.20))
+		+r(720)
+			padding: 10px
 	&.btn_green
 		position: relative
 		padding: 15px 24px
@@ -237,6 +264,10 @@ body
 				+opacity(0)
 			&:after
 				+opacity(1)
+		+r(720)
+			padding: 11px 14px
+			span
+				font-size: 17px
 	&.btn_big
 		padding: 20px 33px
 		height: 60px
@@ -246,26 +277,55 @@ body
 	min-height: 100%
 	padding-bottom: 174px
 	+box
+	&.out_ind
+		.header__in
+			+r(800)
+				padding: 0 0 0 50px
 
 // header
 .header
 	margin-bottom: 20px
-	padding: 15px 0 13px
+	padding: 12px 0 13px
 	background: #fff
 	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10)
 	.header__in
+		position: relative
+		padding: 0 158px 0 240px
 		font-size: 0
 		@extend %in
-	.logos,
-	.order,
-	.logo-platron
-		vertical-align: top
-		display: inline-block
+		+r(800)
+			padding: 0
+
+// btn-menu
+.btn-menu
+	position: absolute
+	left: 0
+	top: 0
+	margin-top: -15px
+	width: 50px
+	height: 75px
+	background: #fff
+	+transition(left .1s linear)
+	display: none
+	&:before
+		position: absolute
+		content: ''
+		left: 50%
+		top: 50%
+		+translate(-50%, -50%)
+		+svg(menu, 30, 30)
+	+r(800)
+		display: block
 
 // logos
 .logos
+	position: absolute
+	left: 0
+	top: 0
 	width: 240px
 	text-align: center
+	+r(800)
+		display: none
 	&.is-active
 		.logo
 			display: none
@@ -288,14 +348,17 @@ body
 	img
 		display: block
 .logo-platron
-	margin: 11px 0 0 35px
+	position: absolute
+	top: 50%
+	right: 28px
+	margin-top: -15px
 	+svg(logo-platron, 103, 31)
 	display: inline-block
+	+r(800)
+		display: none
 
 // order
 .order
-	position: relative
-	width: 540px
 	height: 50px
 	color: #4A4A4A
 	font-size: 13px
@@ -303,7 +366,7 @@ body
 	border-left: 1px solid #f5f5f6
 	border-right: 1px solid #f5f5f6
 	.order__in
-		position: absolute
+		position: relative
 		padding: 13px 30px 40px
 		top: -18px
 		left: 0
@@ -313,10 +376,16 @@ body
 		+border-radius(0 0 6px 6px)
 		background: #FFFFFF
 		+box
+		+r(800)
+			padding: 13px 10px 40px
 		&.is-active
 			height: auto
-			z-index: 3
+			z-index: 4
 			+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
+			+r(480)
+				position: absolute
+				left: 0
+				right: 0
 			.order__more
 				display: none
 			.order__close
@@ -333,20 +402,24 @@ body
 		+clr
 	.order__left
 		float: left
-		width: 114px
+		width: 123px
+		+r(480)
+			width: 90px
 	.order__right
-		float: right
-		width: 346px
+		overflow: hidden
 		letter-spacing: -0.2px
 	.order__gray
 		font-size: 12px
 		color: #9B9B9B 
 	.order__text
-		padding-right: 63px
 		overflow: hidden
-		max-height: 140px
 		text-overflow: ellipsis
 		white-space: nowrap
+		+r(940)
+			padding-right: 78px
+		+r(800)
+			padding-right: 95px
+			
 	.order__more,
 	.order__close
 		color: #00c7f4
@@ -386,8 +459,14 @@ body
 	background: #fff
 	+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.10))
 	+clr
+	+r(940)
+		margin: 0 10px
+		min-height: inherit
 	&.wrapper_tabs
 		min-height: auto
+		+r(800)
+			&:before
+				display: none
 		&:before
 			position: absolute
 			content: ''
@@ -407,19 +486,29 @@ body
 	text-align: center
 	&.center_mod
 		padding-top: 120px
+		+r(940)
+			padding-top: 22px
 		.center__link-wrap
 			margin-top: 40px
+			+r(940)
+				margin-top: 20px
 		.center__text
 			text-align: center
+	+r(940)
+		width: 100%
+		padding: 18px 10px
+		+box
 	.center__in
 		margin: 0 auto
-		width: 460px
+		max-width: 460px
 	.center__text
 		margin-top: 20px
 		color: #797A7B
 		text-align: left
 	.center__link-wrap
 		margin-top: 30px
+		+r(940)
+			margin-top: 20px
 	.center__link
 		text-decoration: underline
 		color: #00C7F4
@@ -428,6 +517,8 @@ body
 			text-decoration: none
 	.btn.btn_green
 		margin: 40px 0 0
+		+r(940)
+			margin: 20px 0 0
 		.ico
 			margin-right: 18px
 
@@ -440,6 +531,9 @@ body
 	+border-radius(8px)
 	background: #FFF9DF
 	+box
+	+r(940)
+		margin: 22px auto
+		max-height: auto
 	&.info-yellow_mod
 		padding: 24px
 	.info-yellow__row
@@ -473,9 +567,17 @@ body
 	left: 50%
 	display: inline-block
 	+translate(-50%, 0)
+	+r(940)
+		position: relative
+		margin-bottom: 8px
+		top: auto
+		text-align: center
+		display: block
 
 .ico-center
 	margin: 25px 0
+	+r(940)
+		margin: 15px 0
 
 // tabs
 .tabs
@@ -487,15 +589,26 @@ body
 		z-index: 2
 		border-right: 1px solid #e5e7ea
 		background: #f6f7f8
+		+transition(left 0.1s linear)
 		+box
+		+r(800)
+			position: fixed
+			z-index: 100
+			top: 0
+			left: -240px
+			overflow-y: auto
+			bottom: 0
+	.tabs__containers
+		overflow: hidden
+		max-width: 700px
+		+r(800)
+			max-width: 100%
 	.link
 		&:hover
 			&:before
 				visibility: visible
 				+opacity(1)
 	.container
-		float: right
-		width: 700px
 		display: none
 	.container.is-target,
 	.container:target
@@ -506,6 +619,8 @@ body
 	padding: 22px 30px 30px
 	background: #fff
 	+box
+	+r(640)
+		padding: 10px 15px
 
 // link
 .link
@@ -537,14 +652,21 @@ body
 .accept
 	margin-top: 12px
 	font-size: 0
+	+r(420)
+		margin-top: 5px
 	.accept__text,
 	.accept__list
 		vertical-align: top
 		display: inline-block
+		+r(420)
+			text-align: center
+			display: block
 	.accept__text
 		font-size: 13px
 		line-height: 26px
 		color: #9B9B9B
+		+r(420)
+			margin-bottom: 3px
 	.accept__list
 		margin-left: 10px
 		li
@@ -565,8 +687,19 @@ body
 		.form__in
 			position: relative
 			z-index: 3
+			+r(540)
+				padding: 10px
+				width: 365px
+			+r(400)
+				margin: 0
+				width: 270px
 		input
 			text-transform: uppercase
+		.form__col
+			+r(400)
+				padding-right: 0
+				.info
+					display: none
 	&.form_mail
 		margin: 8px 0 0
 		display: none
@@ -626,6 +759,11 @@ body
 			top: 75px
 			right: -160px
 			width: 81px
+			+r(590)
+				right: -120px
+			+r(540)
+				top: 64px
+				right: 10px
 
 	.form__field
 		font-size: 0
@@ -639,10 +777,15 @@ body
 		width: 48%
 		vertical-align: top
 		display: inline-block
+		+r(540)
+			margin: 0
+			width: 100%
 		&:first-child
 			margin-left: 0
 		&.form__item_alfa
 			display: none
+			+r(480)
+				margin-top: 15px
 		&.is-active
 			display: inline-block
 	.form__text
@@ -651,6 +794,8 @@ body
 		color: #9B9B9B
 		&.form__text_nowrap
 			white-space: nowrap
+			+r(540)
+				white-space: normal
 	.form__bottom
 		margin-top: 43px
 		font-size: 0
@@ -667,6 +812,8 @@ body
 	color: #4A4A4A
 	cursor: pointer
 	+user-select(none)
+	+r(420)
+		font-size: 12px
 	&:before
 		position: absolute
 		content: ''
@@ -679,6 +826,9 @@ body
 		border: 1px solid #CDD0D4
 		+box-shadow(inset 0px 2px 4px 0px rgba(0,0,0,0.10))
 		+border-radius(2px)
+		+r(420)
+			top: 0
+			margin: 0
 	input
 		position: absolute
 		top: 50%
@@ -689,6 +839,9 @@ body
 		z-index: 2
 		cursor: pointer
 		+opacity(0)
+		+r(420)
+			top: 0
+			margin: 0
 		&:checked
 			& + span
 				&:after,
@@ -728,21 +881,44 @@ body
 	+border-radius(6px)
 	background: #FFF9DF
 	+clr
+	+r(720)
+		padding-left: 10px
 	.checkout__left
 		float: left
 		max-width: 400px
 		line-height: 50px
+		+r(865)
+			margin-top: 0
+			line-height: 25px
+		+r(720)
+			margin-top: 6px
+		+r(640)
+			margin-top: 0
 	.checkout__text
 		display: inline-block
+		+r(865)
+			display: block
+		+r(720)
+			display: inline-block
+		+r(640)
+			display: block
+		+r(460)
+			display: inline-block
 	.price
 		margin: 0 5px
-		font-size: 28px
 		vertical-align: top
+		+r(940)
+			margin-left: 0
+			font-size: 16px
 	.checkout__text,
 	.currency
 		vertical-align: middle
+		+r(865)
+			vertical-align: initial
 	.btn
 		float: right
+		+r(640)
+			margin-top: 5px
 
 // currency
 .currency
@@ -771,10 +947,16 @@ body
 	z-index: 2
 	+box-shadow(inset -1px 0 0 #e5e7ea, 0px 1px 2px 0px rgba(0,0,0,0.05))
 	+border-radius(8px)
+	+r(400)
+		width: 270px
 	&.bg-card_cvv
 		top: 10px
 		left: 160px
 		z-index: 1
+		+r(590)
+			left: 105px
+		+r(540)
+			display: none
 		&:before
 			position: absolute
 			content: ''
@@ -834,6 +1016,12 @@ body
 	color: #4A4A4A
 	line-height: 35px
 	font-weight: 300
+	+r(450)
+		text-align: center
+		font-size: 17px
+		line-height: 25px
+		.ico
+			display: none
 	.ico
 		margin: 6px 12px 0 0
 
@@ -842,6 +1030,9 @@ body
 	color: #4A4A4A
 	font-weight: 300
 	line-height: 40px
+	+r(668)
+		font-size: 22px
+		line-height: 32px
 
 // payment
 .payment
@@ -864,6 +1055,14 @@ body
 		+background-image(linear-gradient(-180deg, #FFFFFF 50%, #FCFCFD 100%))
 		display: inline-block
 		+box
+		+r(940)
+			width: 31.3%
+		+r(800)
+			width: 23%
+		+r(580)
+			width: 31.3%
+		+r(460)
+			width: 48%
 		&:hover
 			border: 1px solid #D4D8DD
 			+box-shadow(0px 0px 3px 0px rgba(114,191,48,0.30), 0px 1px 2px 0px rgba(0,0,0,0.03))
@@ -896,12 +1095,24 @@ body
 	padding-bottom: 30px
 	.footer__in
 		@extend %in
+		+r(940)
+			margin: 0 10px
+			.footer__left,
+			.footer__right,
+			.support
+				float: none
+				display: block
+				text-align: center
 	.footer__left
 		float: left
 	.footer__right
 		float: right
 	.footer__row
 		+clr
+	&.footer_ind
+		.support
+			+r(940)
+				margin-top: 10px
 
 // support
 .support
@@ -910,6 +1121,8 @@ body
 	display: table
 	.support__row
 		display: table-cell
+		+r(940)
+			display: block
 		&:first-child
 			padding-right: 8px
 		strong
@@ -1081,7 +1294,19 @@ body
 		.form__field
 			width: 420px
 
-
+// overlay
+.overlay
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	cursor: pointer
+	visibility: hidden
+	+opacity(0)
+	z-index: -1
+	background: rgba(#000, .5)
+	+transition(left 0.1s linear)
 
 
 

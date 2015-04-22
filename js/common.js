@@ -363,4 +363,12 @@ head.ready(function() {
 	}
 	val_phone();
 
+	// menu mob
+	$('.js-menu').on('click', function(){
+		$('body').toggleClass('is-open-menu');
+	});
+	$('.js-overlay').on('click', function(){
+		$('body').removeClass('is-open-menu');
+	});
+
 });
