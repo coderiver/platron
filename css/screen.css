@@ -74,7 +74,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .ico.ico_russian-standard { background: url('../img/icons-se477c9e94b.png') 0 -249px no-repeat; width: 93px; height: 41px; }
 .ico.ico_alfabank { background: url("../img/svg/alfabank.svg") no-repeat 0 0; -moz-background-size: 100px 30px; -o-background-size: 100px 30px; -webkit-background-size: 100px 30px; background-size: 100px 30px; width: 100px; height: 30px; display: inline-block; }
 .ico.ico_handybank { background: url("../img/svg/handybank.svg") no-repeat 0 0; -moz-background-size: 120px 28px; -o-background-size: 120px 28px; -webkit-background-size: 120px 28px; background-size: 120px 28px; width: 120px; height: 28px; display: inline-block; }
-.ico.ico_error { background: url("../img/svg/ico-error-white.svg") no-repeat 0 0; -moz-background-size: 39px 39px; -o-background-size: 39px 39px; -webkit-background-size: 39px 39px; background-size: 39px 39px; width: 39px; height: 39px; display: inline-block; }
+.ico.ico_error-white { background: url("../img/svg/ico-error-white.svg") no-repeat 0 0; -moz-background-size: 39px 39px; -o-background-size: 39px 39px; -webkit-background-size: 39px 39px; background-size: 39px 39px; width: 39px; height: 39px; display: inline-block; }
 .ico.ico_clock { background: url("../img/svg/ico-clock.svg") no-repeat 0 0; -moz-background-size: 78px 78px; -o-background-size: 78px 78px; -webkit-background-size: 78px 78px; background-size: 78px 78px; width: 78px; height: 78px; display: inline-block; }
 .ico.ico_print { background: url("../img/svg/ico-print.svg") no-repeat 0 0; -moz-background-size: 23px 23px; -o-background-size: 23px 23px; -webkit-background-size: 23px 23px; background-size: 23px 23px; width: 23px; height: 23px; display: inline-block; }
 @media only screen and (max-width: 720px) { .ico.ico_print { margin-top: -3px; } }
@@ -269,6 +269,11 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .form .form__bottom .btn { margin-left: 20px; }
 .form .form__bottom .btn:first-child { margin-left: 0; }
 .form .form__bottom .btn.btn_white { padding: 15px 19px; }
+@media only screen and (max-width: 940px) { .form .form__bottom { margin-top: 20px; text-align: center; }
+  .form .form__bottom .btn.btn_white { padding: 10px; } }
+@media only screen and (max-width: 500px) { .form .form__bottom .btn { margin: 10px 0 0; width: 100%; }
+  .form .form__bottom .btn:first-child { margin: 0; } }
+@media only screen and (max-width: 420px) { .form .form__bottom .btn span { font-size: 13px; } }
 
 .checkbox { position: relative; color: #4a4a4a; cursor: pointer; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 @media only screen and (max-width: 420px) { .checkbox { font-size: 12px; } }
@@ -380,17 +385,20 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .digit { height: 25px; font-size: 32px; font-weight: 600; color: #4a4a4a; line-height: 23px; vertical-align: top; overflow: hidden; display: inline-block; }
 
 .popup { position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow-y: auto; z-index: -1; visibility: hidden; cursor: pointer; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; background: rgba(0, 0, 0, 0.5); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+@media only screen and (max-width: 940px) { .popup { padding: 10px; }
+  .popup .form { margin-top: 10px; } }
 .popup .popup__header { position: relative; padding: 25px 0 16px; font-size: 24px; color: white; text-align: center; line-height: 33px; z-index: 1; cursor: default; -moz-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); background: #e75040; }
+@media only screen and (max-width: 740px) { .popup .popup__header { font-size: 18px; } }
 .popup .popup__header .ico { margin-right: 24px; }
 .popup .popup__close { position: absolute; top: 20px; right: 20px; color: white; font-size: 13px; line-height: 18px; text-decoration: underline; }
 .popup .popup__close:hover { text-decoration: none; }
+@media only screen and (max-width: 740px) { .popup .popup__close { top: 10px; } }
 .popup .popup__in { position: relative; margin: 120px auto 30px; padding: 40px 30px 25px; max-width: 540px; background: white; z-index: 1; cursor: default; -moz-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.2); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+@media only screen and (max-width: 940px) { .popup .popup__in { padding: 20px; margin-top: 0; } }
 .popup .popup__btn-close { position: absolute; top: 10px; right: 10px; background-color: none; background: url("../img/svg/ico-close.svg") no-repeat 0 0; -moz-background-size: 16px 16px; -o-background-size: 16px 16px; -webkit-background-size: 16px 16px; background-size: 16px 16px; width: 16px; height: 16px; display: inline-block; -moz-transition: all 0.2 linear; -o-transition: all 0.2 linear; -webkit-transition: all 0.2 linear; transition: all 0.2 linear; }
 .popup .popup__btn-close:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .popup .popup__title { margin-bottom: 25px; text-align: center; font-size: 30px; color: #4a4a4a; font-weight: 300; line-height: 40px; }
-.popup .form .form__label, .popup .form .form__field { display: inline-block; }
-.popup .form .form__label { width: 60px; }
-.popup .form .form__field { width: 420px; }
+@media only screen and (max-width: 940px) { .popup .popup__title { margin-bottom: 10px; } }
 
 .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; z-index: -1; background: rgba(0, 0, 0, 0.5); -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; }
 

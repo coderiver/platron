@@ -179,7 +179,7 @@ body
 		+svg(alfabank, 100, 30)
 	&.ico_handybank
 		+svg(handybank, 120, 28)
-	&.ico_error
+	&.ico_error-white
 		+svg(ico-error-white, 39, 39)
 	&.ico_clock
 		+svg(ico-clock, 78, 78)
@@ -805,6 +805,21 @@ body
 				margin-left: 0
 			&.btn_white
 				padding: 15px 19px
+		+r(940)
+			margin-top: 20px
+			text-align: center
+			.btn.btn_white
+				padding: 10px
+		+r(500)
+			.btn
+				margin: 10px 0 0
+				width: 100%
+				&:first-child
+					margin: 0
+		+r(420)
+			.btn
+				span
+					font-size: 13px
 
 // checkbox
 .checkbox
@@ -1234,7 +1249,10 @@ body
 	+opacity(0)
 	background: rgba(#000, .5)
 	+box
-	// +transition(all .2s linear)
+	+r(940)
+		padding: 10px
+		.form
+			margin-top: 10px
 	.popup__header
 		position: relative
 		padding: 25px 0 16px
@@ -1246,6 +1264,8 @@ body
 		cursor: default
 		+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
 		background: #E75040
+		+r(740)
+			font-size: 18px
 		.ico 
 			margin-right: 24px
 	.popup__close
@@ -1258,6 +1278,8 @@ body
 		text-decoration: underline
 		&:hover
 			text-decoration: none
+		+r(740)
+			top: 10px
 	.popup__in
 		position: relative
 		margin: 120px auto 30px
@@ -1269,6 +1291,9 @@ body
 		+box-shadow(0px 20px 20px 0px rgba(0,0,0,0.20))
 		+border-radius(8px)
 		+box
+		+r(940)
+			padding: 20px
+			margin-top: 0
 	.popup__btn-close
 		position: absolute
 		top: 10px
@@ -1285,14 +1310,8 @@ body
 		color: #4A4A4A
 		font-weight: 300
 		line-height: 40px
-	.form
-		.form__label,
-		.form__field
-			display: inline-block
-		.form__label
-			width: 60px
-		.form__field
-			width: 420px
+		+r(940)
+			margin-bottom: 10px
 
 // overlay
 .overlay
