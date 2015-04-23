@@ -243,8 +243,8 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .form input:focus::-webkit-input-placeholder { font-size: 0; }
 .form input:focus::placeholder { font-size: 0; }
 .form input.error { border: 1px solid #e0493a; color: #e74c3c; box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); }
-.form input.error:-moz-placeholder, .form input.error::-moz-placeholder { color: #e74c3c; opacity: 1; }
-.form input.error::-webkit-input-placeholder { color: #e74c3c; }
+.form input.error + .error-text { display: block; }
+.form .error-text { margin-top: 3px; color: #e0493a; font-size: 12px; display: none; }
 .form .form__in { padding: 16px 0 0 20px; width: 346px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .form .form__col { position: relative; margin-top: 18px; padding-right: 26px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .form .form__col:first-child { margin-top: 0; }
@@ -314,13 +314,13 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .bg-card.bg-card_cvv { top: 10px; left: 160px; z-index: 1; }
 @media only screen and (max-width: 590px) { .bg-card.bg-card_cvv { left: 105px; } }
 @media only screen and (max-width: 540px) { .bg-card.bg-card_cvv { display: none; } }
-.bg-card.bg-card_cvv:before { position: absolute; content: ""; left: 0; top: 30px; right: 0; height: 40px; background: #4f4f4f; }
+.bg-card.bg-card_cvv:before { position: absolute; content: ""; left: 210px; top: 30px; right: 0; height: 40px; background: #4f4f4f; }
 
 .info { position: absolute; right: 0; top: 54%; cursor: pointer; display: inline-block; }
 .info .ico { cursor: pointer; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .info:hover .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info.is-active .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
-.info.is-active .info__window { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
+.info.is-active .info__window { visibility: visible; z-index: 1; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info .info__window { position: absolute; bottom: 100%; left: -77px; margin-bottom: 15px; padding: 10px 15px; width: 171px; font-size: 13px; color: white; line-height: 20px; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: rgba(0, 0, 0, 0.66); -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .info .info__window:before { position: absolute; content: ""; left: 50%; margin-left: -10px; bottom: -10px; width: 0px; height: 0px; border-style: solid; border-width: 10px 10px 0 10px; border-color: rgba(0, 0, 0, 0.66) transparent transparent transparent; }
 

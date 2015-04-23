@@ -729,7 +729,13 @@ body
 			border: 1px solid #E0493A
 			color: #E74C3C
 			box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.10)
-			+placeholder-color(#E74C3C)
+			& + .error-text
+				display: block
+	.error-text
+		margin-top: 3px
+		color: #E0493A
+		font-size: 12px
+		display: none
 	.form__in
 		padding: 16px 0 0 20px
 		width: 346px
@@ -975,7 +981,7 @@ body
 		&:before
 			position: absolute
 			content: ''
-			left: 0
+			left: 210px
 			top: 30px
 			right: 0
 			height: 40px
@@ -1000,6 +1006,7 @@ body
 			+opacity(1)
 		.info__window
 			visibility: visible
+			z-index: 1
 			+opacity(1)
 	.info__window
 		position: absolute

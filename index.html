@@ -136,7 +136,7 @@
 									<div class="form__label">CVC/CVV</div>
 									<div class="form__row">
 										<div class="form__field">
-											<input type="text" name="cvv" placeholder="123">
+											<input type="text" name="cvv" placeholder="123" maxlength="4">
 										</div>
 									</div>
 									<!-- info -->
@@ -153,6 +153,8 @@
 								<div class="form__label">Номер телефона</div>
 								<div class="form__field">
 									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+									<div class="error-text">Поле заполнено неверно</div>
 								</div>
 								<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
@@ -160,13 +162,14 @@
 								<div class="form__label">E-mail</div>
 								<div class="form__field">
 									<input type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
 								</div>
 								<div class="form__text">Нужен для оповещения о результатах платежа</div>
 							</div>
 						</div>
 						<!-- checkbox -->
-						<label class="checkbox">
-							<input class="js-open-myemail" type="checkbox">
+						<label class="checkbox" for="checkbox">
+							<input class="js-open-myemail" id="checkbox" type="checkbox">
 							<span>Прислать на мой e-mail информацию об оплате</span>
 						</label>
 						<!-- form mail -->
@@ -174,6 +177,8 @@
 							<div class="form__item">
 								<div class="form__field">
 									<input type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+									<div class="error-text">Поле заполнено неверно</div>
 								</div>
 							</div>
 						</div>
@@ -202,97 +207,101 @@
 							<li><i class="ico ico_jcb"></i></li>
 						</ul>
 					</div>
-					<!-- form-card -->
-					<div class="form form_card">
-						<div class="bg-card"></div>
-						<div class="bg-card bg-card_cvv"></div>
-						<div class="form__in">
-							<div class="form__col">
-								<div class="form__label">Номер карты</div>
+					<form id="form1">
+						<!-- form-card -->
+						<div class="form form_card">
+							<div class="bg-card"></div>
+							<div class="bg-card bg-card_cvv"></div>
+							<div class="form__in">
+								<div class="form__col">
+									<div class="form__label">Номер карты</div>
+									<div class="form__field">
+										<input name="number" type="text" placeholder="xxxx xxxx xxxx xxxx">
+									</div>
+									<!-- info -->
+									<div class="info js-info">
+										<i class="ico ico_info js-info-btn"></i>
+										<div class="info__window">16 цифр на лицевой стороне карты</div>
+									</div>
+								</div>
+								<div class="form__col form__col_small">
+									<div class="form__label">Срок действия</div>
+									<div class="form__row">
+										<div class="form__field">
+											<input type="text" name="month" placeholder="11">
+										</div>
+										<span>/</span>
+										<div class="form__field">
+											<input type="text" name="year" placeholder="16">
+										</div>
+									</div>
+									<!-- info -->
+									<div class="info js-info">
+										<i class="ico ico_info js-info-btn"></i>
+										<div class="info__window">Срок действия карты</div>
+									</div>
+								</div>
+								<div class="form__col">
+									<div class="form__label">Держатель карты</div>
+									<div class="form__field">
+										<input type="text" name="name" placeholder="KONSTANTIN ALLIGATOR">
+									</div>
+									<!-- info -->
+									<div class="info js-info">
+										<i class="ico ico_info js-info-btn"></i>
+										<div class="info__window">Имя и фамилия латиницей на лицевой стороне карты</div>
+									</div>
+								</div>
+								<div class="form__col form__col_cvv">
+									<div class="form__label">CVC/CVV</div>
+									<div class="form__row">
+										<div class="form__field">
+											<input type="text" name="cvv" placeholder="123">
+										</div>
+									</div>
+									<!-- info -->
+									<div class="info js-info">
+										<i class="ico ico_info js-info-btn"></i>
+										<div class="info__window">3 последние цифры на обратной стороне карты</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
 								<div class="form__field">
-									<input name="number" type="text" placeholder="xxxx xxxx xxxx xxxx">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
 								</div>
-								<!-- info -->
-								<div class="info js-info">
-									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">16 цифр на лицевой стороне карты</div>
-								</div>
+								<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
-							<div class="form__col form__col_small">
-								<div class="form__label">Срок действия</div>
-								<div class="form__row">
-									<div class="form__field">
-										<input type="text" name="month" placeholder="11">
-									</div>
-									<span>/</span>
-									<div class="form__field">
-										<input type="text" name="year" placeholder="16">
-									</div>
-								</div>
-								<!-- info -->
-								<div class="info js-info">
-									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">Срок действия карты</div>
-								</div>
-							</div>
-							<div class="form__col">
-								<div class="form__label">Держатель карты</div>
+						</div>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
 								<div class="form__field">
-									<input type="text" name="name" placeholder="KONSTANTIN ALLIGATOR">
-								</div>
-								<!-- info -->
-								<div class="info js-info">
-									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">Имя и фамилия латиницей на лицевой стороне карты</div>
-								</div>
-							</div>
-							<div class="form__col form__col_cvv">
-								<div class="form__label">CVC/CVV</div>
-								<div class="form__row">
-									<div class="form__field">
-										<input type="text" name="cvv" placeholder="123">
-									</div>
-								</div>
-								<!-- info -->
-								<div class="info js-info">
-									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">3 последние цифры на обратной стороне карты</div>
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
 							</div>
-							<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
+							<button class="btn btn_green" type="submit"><span>Оплатить картой</span></button>
 						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
-							</div>
-						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
-						</div>
-						<button class="btn btn_green"><span>Оплатить картой</span></button>
-					</div>
+					</form>
 				</div>
 				<!-- container purse -->
 				<div class="container js-tabs-cont" id="purse">
@@ -326,38 +335,42 @@
 							</a>
 						</div>
 					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
-							</div>
-							<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
-						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+					<form id="form2">
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
+								<div class="form__field">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
 						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
+								<div class="form__field">
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn_green"><span>Перейти к оплате</span></button>
-					</div>
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
+							</div>
+							<button class="btn btn_green" type="submit"><span>Перейти к оплате</span></button>
+						</div>
+					</form>
 				</div>
 				<!-- container terminals -->
 				<div class="container js-tabs-cont" id="terminals">
@@ -396,38 +409,43 @@
 							</a>
 						</div>
 					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
-							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
-						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+					<form action="" id="form3">
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
+								<div class="form__field">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
 						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
+								<div class="form__field">
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+									<div class="error-text">Поле заполнено неверно</div>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn_green"><span>Перейти к оплате</span></button>
-					</div>
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
+							</div>
+							<button class="btn btn_green" type="submit"><span>Перейти к оплате</span></button>
+						</div>
+					</form>
 				</div>
 				<!-- container cashbox -->
 				<div class="container js-tabs-cont" id="cashbox">
@@ -461,38 +479,42 @@
 							</a>
 						</div>
 					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
-							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
-						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+					<form action="" id="form4">
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
+								<div class="form__field">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
 						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
+								<div class="form__field">
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn_green"><span>Перейти к оплате</span></button>
-					</div>
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
+							</div>
+							<button class="btn btn_green" type="submit"><span>Перейти к оплате</span></button>
+						</div>
+					</form>
 				</div>
 				<!-- container from your phone balance -->
 				<div class="container js-tabs-cont" id="from-your-balance">
@@ -521,38 +543,42 @@
 							</a>
 						</div>
 					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
-							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
-						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+					<form action="" id="form5">
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
+								<div class="form__field">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
 						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
+								<div class="form__field">
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn_green"><span>Перейти к оплате</span></button>
-					</div>
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
+							</div>
+							<button class="btn btn_green" type="submit"><span>Перейти к оплате</span></button>
+						</div>
+					</form>
 				</div>
 				<!-- container internet-banking -->
 				<div class="container js-tabs-cont" id="internet-banking">
@@ -601,45 +627,49 @@
 							</a>
 						</div>
 					</div>
-					<!-- form -->
-					<div class="form">
-						<div class="form__item">
-							<div class="form__label">Номер телефона</div>
-							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+					<form action="" id="form6">
+						<!-- form -->
+						<div class="form">
+							<div class="form__item">
+								<div class="form__label">Номер телефона</div>
+								<div class="form__field">
+									<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+<div class="error-text">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
-						</div>
-						<div class="form__item form__item_alfa js-alfa-input">
-							<div class="form__label">Логин Альфа-клик</div>
-							<div class="form__field">
-								<input type="text" name="alfa-login" placeholder="">
-							</div>
-							<div class="form__text">Нужен для оповещения о результатах платежа</div>
-						</div>
-					</div>
-					<!-- checkbox -->
-					<label class="checkbox">
-						<input class="js-open-myemail" type="checkbox">
-						<span>Прислать на мой e-mail информацию об оплате</span>
-					</label>
-					<!-- form mail -->
-					<div class="form form_mail js-myemail">
-						<div class="form__item">
-							<div class="form__field">
-								<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+							<div class="form__item form__item_alfa js-alfa-input">
+								<div class="form__label">Логин Альфа-клик</div>
+								<div class="form__field">
+									<input type="text" name="alfa-login" placeholder="">
+								</div>
+								<div class="form__text">Нужен для оповещения о результатах платежа</div>
 							</div>
 						</div>
-					</div>
-					<!-- checkout -->
-					<div class="checkout">
-						<div class="checkout__left">
-							<span class="checkout__text">Сумма с комиссией:</span>
-							<div class="price">148 500.50 <span class="ruble">₽</span></div>
-							<span class="currency">$6900.44</span>
+						<!-- checkbox -->
+						<label class="checkbox">
+							<input class="js-open-myemail" type="checkbox">
+							<span>Прислать на мой e-mail информацию об оплате</span>
+						</label>
+						<!-- form mail -->
+						<div class="form form_mail js-myemail">
+							<div class="form__item">
+								<div class="form__field">
+									<input class="js-text-myemail" type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
+								</div>
+							</div>
 						</div>
-						<button class="btn btn_green"><span>Перейти к оплате</span></button>
-					</div>
+						<!-- checkout -->
+						<div class="checkout">
+							<div class="checkout__left">
+								<span class="checkout__text">Сумма с комиссией:</span>
+								<div class="price">148 500.50 <span class="ruble">₽</span></div>
+								<span class="currency">$6900.44</span>
+							</div>
+							<button class="btn btn_green" type="submit"><span>Перейти к оплате</span></button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -693,6 +723,7 @@
 			<div class="form__label">E-mail</div>
 			<div class="form__field">
 				<input type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text">Поле заполнено неверно</div>
 			</div>
 			<div class="form__bottom">
 				<button class="btn btn_white js-popup-close" type="button">Отмена</button>
