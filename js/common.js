@@ -392,13 +392,19 @@ head.ready(function() {
     // Email
 	$('input[name="email"]').on('blur', function(){
 		var value = $(this).val();
-		var re = /[\sА-Яа-я]$/;
+		// var re = /[\sА-Яа-я]$/;
 		var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
-		if (re.test(value)) {
-			value = value.replace(re, '');
-			$(this).val(value);
-		}
+		var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
+		// if (re.test(value)) {
+		// 	value = value.replace(re, '');
+		// 	$(this).val(value);
+		// }
 		if (regMail.test(value)) {
+			$(this).removeClass('error');
+		} else {
+			$(this).addClass('error');
+		}
+		if (regMailC.test(value)) {
 			$(this).removeClass('error');
 		} else {
 			$(this).addClass('error');
@@ -428,11 +434,11 @@ head.ready(function() {
 				$(this).val('+7', value);
 			}
 			// set max and min value
-			if($(this).val().length < 7 || $(this).val().length > 12) {
-				$(this).addClass('error');
-			} else {
-				$(this).removeClass('error');
-			}
+			// if($(this).val().length < 7 || $(this).val().length > 12) {
+			// 	$(this).addClass('error');
+			// } else {
+			// 	$(this).removeClass('error');
+			// }
 		});
 	}
 	val_phone();
