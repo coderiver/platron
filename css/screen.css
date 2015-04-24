@@ -38,8 +38,8 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .ico { display: inline-block; vertical-align: top; }
 .ico.ico_demoshop { background: url("../img/svg/logo.svg") no-repeat 0 0; -moz-background-size: 53px 39px; -o-background-size: 53px 39px; -webkit-background-size: 53px 39px; background-size: 53px 39px; width: 53px; height: 39px; display: inline-block; }
 .ico.ico_logo2 { background: url("../img/svg/logo-2.svg") no-repeat 0 0; -moz-background-size: 128px 52px; -o-background-size: 128px 52px; -webkit-background-size: 128px 52px; background-size: 128px 52px; width: 128px; height: 52px; display: inline-block; }
-.ico.ico_comodo { background: url('../img/icons-se477c9e94b.png') 0 -30px no-repeat; width: 79px; height: 52px; }
-.ico.ico_thawte { background: url('../img/icons-se477c9e94b.png') 0 -300px no-repeat; width: 135px; height: 45px; }
+.ico.ico_comodo { background: url('../img/icons-s8b27423f4b.png') 0 -123px no-repeat; width: 79px; height: 52px; }
+.ico.ico_thawte { background: url('../img/icons-s8b27423f4b.png') 0 -534px no-repeat; width: 135px; height: 45px; }
 .ico.ico_visa { background: url("../img/svg/visa.svg") no-repeat 0 0; -moz-background-size: 36px 25px; -o-background-size: 36px 25px; -webkit-background-size: 36px 25px; background-size: 36px 25px; width: 36px; height: 25px; display: inline-block; }
 .ico.ico_mc { background: url("../img/svg/master-card.svg") no-repeat 0 0; -moz-background-size: 36px 25px; -o-background-size: 36px 25px; -webkit-background-size: 36px 25px; background-size: 36px 25px; width: 36px; height: 25px; display: inline-block; }
 .ico.ico_p { background: url("../img/svg/ico-p.svg") no-repeat 0 0; -moz-background-size: 36px 25px; -o-background-size: 36px 25px; -webkit-background-size: 36px 25px; background-size: 36px 25px; width: 36px; height: 25px; display: inline-block; }
@@ -57,23 +57,23 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .ico.ico_megafon { background: url("../img/svg/megafon.svg") no-repeat 0 0; -moz-background-size: 100px 27px; -o-background-size: 100px 27px; -webkit-background-size: 100px 27px; background-size: 100px 27px; width: 100px; height: 27px; display: inline-block; }
 .ico.ico_tele2 { background: url("../img/svg/tele2.svg") no-repeat 0 0; -moz-background-size: 60px 34px; -o-background-size: 60px 34px; -webkit-background-size: 60px 34px; background-size: 60px 34px; width: 60px; height: 34px; display: inline-block; }
 .ico.ico_eleksnet { background: url("../img/svg/eleksnet.svg") no-repeat 0 0; -moz-background-size: 103px 28px; -o-background-size: 103px 28px; -webkit-background-size: 103px 28px; background-size: 103px 28px; width: 103px; height: 28px; display: inline-block; }
-.ico.ico_ecrn { background: url("../img/svg/ecrn.svg") no-repeat 0 0; -moz-background-size: 90px 32px; -o-background-size: 90px 32px; -webkit-background-size: 90px 32px; background-size: 90px 32px; width: 90px; height: 32px; display: inline-block; }
-.ico.ico_bankpetrocommerz { background: url("../img/svg/bankpetrocommerz.svg") no-repeat 0 0; -moz-background-size: 80px 40px; -o-background-size: 80px 40px; -webkit-background-size: 80px 40px; background-size: 80px 40px; width: 80px; height: 40px; display: inline-block; }
+.ico.ico_ecrn { background: url('../img/icons-s8b27423f4b.png') 0 -230px no-repeat; width: 90px; height: 32px; }
+.ico.ico_bankpetrocommerz { background: url('../img/icons-s8b27423f4b.png') 0 -43px no-repeat; width: 80px; height: 40px; }
 .ico.ico_cyberplat { background: url("../img/svg/cyberplat.svg") no-repeat 0 0; -moz-background-size: 62px 40px; -o-background-size: 62px 40px; -webkit-background-size: 62px 40px; background-size: 62px 40px; width: 62px; height: 40px; display: inline-block; }
-.ico.ico_ocean { background: url('../img/icons-se477c9e94b.png') 0 -206px no-repeat; width: 80px; height: 33px; }
-.ico.ico_euronetwork { background: url("../img/svg/euronetwork.svg") no-repeat 0 0; -moz-background-size: 98px 13px; -o-background-size: 98px 13px; -webkit-background-size: 98px 13px; background-size: 98px 13px; width: 98px; height: 13px; display: inline-block; }
+.ico.ico_ocean { background: url('../img/icons-s8b27423f4b.png') 0 -403px no-repeat; width: 80px; height: 33px; }
+.ico.ico_euronetwork { background: url('../img/icons-s8b27423f4b.png') 0 -272px no-repeat; width: 98px; height: 14px; }
 .ico.ico_svyaznoy { background: url("../img/svg/svyaznoy.svg") no-repeat 0 0; -moz-background-size: 100px 32px; -o-background-size: 100px 32px; -webkit-background-size: 100px 32px; background-size: 100px 32px; width: 100px; height: 32px; display: inline-block; }
-.ico.ico_contact { background: url('../img/icons-se477c9e94b.png') 0 -92px no-repeat; width: 80px; height: 35px; }
+.ico.ico_contact { background: url('../img/icons-s8b27423f4b.png') 0 -185px no-repeat; width: 80px; height: 35px; }
 .ico.ico_unystreem { background: url("../img/svg/unystreem.svg") no-repeat 0 0; -moz-background-size: 70px 37px; -o-background-size: 70px 37px; -webkit-background-size: 70px 37px; background-size: 70px 37px; width: 70px; height: 37px; display: inline-block; }
 .ico.ico_payment-receipt { background: url("../img/svg/payment-receipt.svg") no-repeat 0 0; -moz-background-size: 123px 28px; -o-background-size: 123px 28px; -webkit-background-size: 123px 28px; background-size: 123px 28px; width: 123px; height: 28px; display: inline-block; }
-.ico.ico_sberbank { background: url("../img/svg/sberbank.svg") no-repeat 0 0; -moz-background-size: 90px 27px; -o-background-size: 90px 27px; -webkit-background-size: 90px 27px; background-size: 90px 27px; width: 90px; height: 27px; display: inline-block; }
-.ico.ico_bank { background: url("../img/svg/bank.svg") no-repeat 0 0; -moz-background-size: 110px 36px; -o-background-size: 110px 36px; -webkit-background-size: 110px 36px; background-size: 110px 36px; width: 110px; height: 36px; display: inline-block; }
-.ico.ico_faktura-ru { background: url('../img/icons-se477c9e94b.png') 0 -137px no-repeat; width: 86px; height: 26px; }
+.ico.ico_sberbank { background: url('../img/icons-s8b27423f4b.png') 0 -497px no-repeat; width: 90px; height: 27px; }
+.ico.ico_bank { background: url('../img/icons-s8b27423f4b.png') 0 0 no-repeat; width: 110px; height: 33px; }
+.ico.ico_faktura-ru { background: url('../img/icons-s8b27423f4b.png') 0 -296px no-repeat; width: 86px; height: 26px; }
 .ico.ico_psb { background: url("../img/svg/psb.svg") no-repeat 0 0; -moz-background-size: 90px 48px; -o-background-size: 90px 48px; -webkit-background-size: 90px 48px; background-size: 90px 48px; width: 90px; height: 48px; display: inline-block; }
 .ico.ico_vtb24 { background: url("../img/svg/vtb24.svg") no-repeat 0 0; -moz-background-size: 80px 23px; -o-background-size: 80px 23px; -webkit-background-size: 80px 23px; background-size: 80px 23px; width: 80px; height: 23px; display: inline-block; }
-.ico.ico_russian-standard { background: url('../img/icons-se477c9e94b.png') 0 -249px no-repeat; width: 93px; height: 41px; }
+.ico.ico_russian-standard { background: url('../img/icons-s8b27423f4b.png') 0 -446px no-repeat; width: 93px; height: 41px; }
 .ico.ico_alfabank { background: url("../img/svg/alfabank.svg") no-repeat 0 0; -moz-background-size: 100px 30px; -o-background-size: 100px 30px; -webkit-background-size: 100px 30px; background-size: 100px 30px; width: 100px; height: 30px; display: inline-block; }
-.ico.ico_handybank { background: url("../img/svg/handybank.svg") no-repeat 0 0; -moz-background-size: 120px 28px; -o-background-size: 120px 28px; -webkit-background-size: 120px 28px; background-size: 120px 28px; width: 120px; height: 28px; display: inline-block; }
+.ico.ico_handybank { background: url('../img/icons-s8b27423f4b.png') 0 -332px no-repeat; width: 120px; height: 28px; }
 .ico.ico_error-white { background: url("../img/svg/ico-error-white.svg") no-repeat 0 0; -moz-background-size: 39px 39px; -o-background-size: 39px 39px; -webkit-background-size: 39px 39px; background-size: 39px 39px; width: 39px; height: 39px; display: inline-block; }
 .ico.ico_clock { background: url("../img/svg/ico-clock.svg") no-repeat 0 0; -moz-background-size: 78px 78px; -o-background-size: 78px 78px; -webkit-background-size: 78px 78px; background-size: 78px 78px; width: 78px; height: 78px; display: inline-block; }
 .ico.ico_print { background: url("../img/svg/ico-print.svg") no-repeat 0 0; -moz-background-size: 23px 23px; -o-background-size: 23px 23px; -webkit-background-size: 23px 23px; background-size: 23px 23px; width: 23px; height: 23px; display: inline-block; }
@@ -82,7 +82,8 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .ico.ico_selected { background: url("../img/svg/ico-selected.svg") no-repeat 0 0; -moz-background-size: 78px 78px; -o-background-size: 78px 78px; -webkit-background-size: 78px 78px; background-size: 78px 78px; width: 78px; height: 78px; display: inline-block; }
 .ico.ico_error { background: url("../img/svg/ico-error.svg") no-repeat 0 0; -moz-background-size: 80px 80px; -o-background-size: 80px 80px; -webkit-background-size: 80px 80px; background-size: 80px 80px; width: 80px; height: 80px; display: inline-block; }
 
-.ruble { font-family: "ruble", Arial, sans-serif; font-weight: normal; }
+.ruble { font-family: "ruble", Arial, sans-serif; font-weight: normal; font-size: 0; vertical-align: sub; display: inline-block; background: url("../img/svg/ruble.svg") no-repeat 0 0; -moz-background-size: 13px 22px; -o-background-size: 13px 22px; -webkit-background-size: 13px 22px; background-size: 13px 22px; width: 13px; height: 22px; display: inline-block; }
+@media only screen and (max-width: 940px) { .ruble { margin-top: -2px; vertical-align: middle; background: url("../img/svg/ruble.svg") no-repeat 0 0; -moz-background-size: 10px 15px; -o-background-size: 10px 15px; -webkit-background-size: 10px 15px; background-size: 10px 15px; width: 10px; height: 15px; display: inline-block; } }
 
 .js-hide { display: none !important; }
 
@@ -146,6 +147,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .order .order__left { float: left; width: 123px; }
 @media only screen and (max-width: 480px) { .order .order__left { width: 90px; } }
 .order .order__right { overflow: hidden; letter-spacing: -0.2px; }
+.order .order__price .ruble { margin-top: -2px; vertical-align: middle; background: url("../img/svg/ruble.svg") no-repeat 0 0; -moz-background-size: 8px 13px; -o-background-size: 8px 13px; -webkit-background-size: 8px 13px; background-size: 8px 13px; width: 8px; height: 13px; display: inline-block; }
 .order .order__gray { font-size: 12px; color: #9b9b9b; }
 .order .order__text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media only screen and (max-width: 940px) { .order .order__text { padding-right: 78px; } }

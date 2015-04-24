@@ -146,15 +146,15 @@ body
 	&.ico_eleksnet
 		+svg(eleksnet, 103, 28)
 	&.ico_ecrn
-		+svg(ecrn, 90, 32)
+		+s(ecrn)
 	&.ico_bankpetrocommerz
-		+svg(bankpetrocommerz, 80, 40)
+		+s(bankpetrocommerz)
 	&.ico_cyberplat
 		+svg(cyberplat, 62, 40)
 	&.ico_ocean
 		+s(ocean)
 	&.ico_euronetwork
-		+svg(euronetwork, 98, 13)
+		+s(euronetwork)
 	&.ico_svyaznoy
 		+svg(svyaznoy, 100, 32)
 	&.ico_contact
@@ -164,9 +164,9 @@ body
 	&.ico_payment-receipt
 		+svg(payment-receipt, 123, 28)
 	&.ico_sberbank
-		+svg(sberbank, 90, 27)
+		+s(sberbank)
 	&.ico_bank
-		+svg(bank, 110, 36)
+		+s(bank)
 	&.ico_faktura-ru
 		+s(faktura-ru)
 	&.ico_psb
@@ -178,7 +178,7 @@ body
 	&.ico_alfabank
 		+svg(alfabank, 100, 30)
 	&.ico_handybank
-		+svg(handybank, 120, 28)
+		+s(handybank)
 	&.ico_error-white
 		+svg(ico-error-white, 39, 39)
 	&.ico_clock
@@ -197,6 +197,14 @@ body
 // ruble
 .ruble
 	+ruble
+	font-size: 0
+	vertical-align: sub
+	display: inline-block
+	+svg(ruble, 13, 22)
+	+r(940)
+		margin-top: -2px
+		vertical-align: middle
+		+svg(ruble, 10, 15)
 
 // display: none
 .js-hide
@@ -408,6 +416,11 @@ body
 	.order__right
 		overflow: hidden
 		letter-spacing: -0.2px
+	.order__price
+		.ruble
+			margin-top: -2px
+			vertical-align: middle
+			+svg(ruble, 8, 13)
 	.order__gray
 		font-size: 12px
 		color: #9B9B9B 
