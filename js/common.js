@@ -302,7 +302,16 @@ head.ready(function() {
 		
 	// }
  //    number();
- 	$('input[name="number"]').mask("9999 9999 9999 9999", {placeholder:""});
+ 	$('input[name="number"]').on('input', function(){
+ 		if ($(this).val() <  15) {
+ 			$(this).mask("9999 9999 9999 9999", {placeholder:""});
+ 		}
+ 		else {
+ 			alert('211');
+ 			$(this).mask("9999 9999 9999 9999999", {placeholder:""});
+ 		}
+ 	});
+ 	
  	// $('input[name="month"]').mask("99", {placeholder:""});
  	// $('input[name="year"]').mask("99", {placeholder:""});
  	// $('input[name="cvv"]').mask("999", {placeholder:""});
