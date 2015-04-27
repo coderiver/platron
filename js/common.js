@@ -121,6 +121,7 @@ head.ready(function() {
 
 	// info
 	$('.js-info-btn').on('click', function(){
+		$('.js-order-in').removeClass('is-active');
 		var parent = $(this).parent();
 
 		if (parent.hasClass('is-active')) {
@@ -133,7 +134,7 @@ head.ready(function() {
 		else {
 			parent.toggleClass('is-active');
 		}
-		return false;
+		// return false;
 
 	});
 	$( ".js-info-btn" ).click(function( event ) {
@@ -288,29 +289,7 @@ head.ready(function() {
 	});
 
 	// card number
-	// function number() {
-
-	// 	$('input[name="number"]').on('change', function(){
-	// 		$('input[name="number"]').mask("9999 9999 9999 9999", {placeholder:""});
-	// 		set max and min value
-	// 		if($(this).val().length < 19) {
-	// 			$(this).addClass('error');
-	// 		} else {
-	// 			$(this).removeClass('error');
-	// 		}
-	// 	});
-		
-	// }
- //    number();
- 	$('input[name="number"]').on('input', function(){
- 		if ($(this).val() <  15) {
- 			$(this).mask("9999 9999 9999 9999", {placeholder:""});
- 		}
- 		else {
- 			alert('211');
- 			$(this).mask("9999 9999 9999 9999999", {placeholder:""});
- 		}
- 	});
+ 	$('input[name="number"]').mask("9999 9999 9999 9999?999", {placeholder:""});
  	
  	// $('input[name="month"]').mask("99", {placeholder:""});
  	// $('input[name="year"]').mask("99", {placeholder:""});
@@ -340,21 +319,27 @@ head.ready(function() {
 	$('input[name="month"]').on('input', function(){
 		var value = $(this).val();
 		var firstChar = value.substring(0, 1);
+		var twoChar = value.substring(0, 2);
 		if (firstChar > 1) {
 			value = value.replace('');
 			$(this).val('', value);
 		}
+		if (value > 12) {
+			twoChar = '1';
+			value = value.replace('');
+			$(this).val(twoChar, value);
+		}
 	});
 
 	// year
-	$('input[name="year"]').on('input', function(){
-		var value = $(this).val();
-		var firstChar = value.substring(0, 1);
-		if (firstChar != 1) {
-			value = value.replace('');
-			$(this).val('', value);
-		}
-	});
+	// $('input[name="year"]').on('input', function(){
+	// 	var value = $(this).val();
+	// 	var firstChar = value.substring(0, 1);
+	// 	if (firstChar != 1) {
+	// 		value = value.replace('');
+	// 		$(this).val('', value);
+	// 	}
+	// });
 
 	// CVV
 	$('input[name="cvv"]').on('change', function(){
@@ -388,6 +373,7 @@ head.ready(function() {
     	//     $(this).addClass('error');
 	    // }
     });
+    $('input[name="name"]').liTranslit();
 
     // Email
 	$('input[name="email"]').on('blur', function(){
@@ -399,16 +385,16 @@ head.ready(function() {
 		// 	value = value.replace(re, '');
 		// 	$(this).val(value);
 		// }
-		if (regMail.test(value)) {
+		if (regMail.test(value) || regMailC.test(value)) {
 			$(this).removeClass('error');
 		} else {
 			$(this).addClass('error');
 		}
-		if (regMailC.test(value)) {
-			$(this).removeClass('error');
-		} else {
-			$(this).addClass('error');
-		}
+		// if (regMailC.test(value)) {
+		// 	$(this).removeClass('error');
+		// } else {
+		// 	$(this).addClass('error');
+		// }
     });
 
     // phone
