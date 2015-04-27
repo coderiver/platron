@@ -249,7 +249,24 @@ head.ready(function() {
 			year: "required",
 			cvv: "required",
 			name: "required",
-			phone: "required"
+			email: {
+				required: true,
+				minlength: 3
+			},
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			},
+			email: {
+				required: "Необходимо указать email",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form1").validate({
@@ -259,32 +276,86 @@ head.ready(function() {
 			year: "required",
 			cvv: "required",
 			name: "required",
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form2").validate({
 		rules: {
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form3").validate({
 		rules: {
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form4").validate({
 		rules: {
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form5").validate({
 		rules: {
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 	$("#form6").validate({
 		rules: {
-			phone: "required"
+			phone: {
+				required: true,
+				minlength: 7
+			}
+		},
+		messages: {
+			phone: {
+				required: "Необходимо указать номер телефона",
+				minlength: "Поле заполнено неверно"
+			}
 		}
 	});
 
@@ -379,26 +450,32 @@ head.ready(function() {
     $('input[name="name"]').liTranslit();
 
     // Email
-	$('input[name="email"]').on('blur', function(){
-		var value = $(this).val();
-		// var re = /[\sА-Яа-я]$/;
-		var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
-		var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
-		// if (re.test(value)) {
-		// 	value = value.replace(re, '');
-		// 	$(this).val(value);
-		// }
-		// if (regMail.test(value) || regMailC.test(value)) {
-		// 	$(this).removeClass('error');
-		// } else {
-		// 	$(this).addClass('error');
-		// }
-		// if (regMailC.test(value)) {
-		// 	$(this).removeClass('error');
-		// } else {
-		// 	$(this).addClass('error');
-		// }
-    });
+	function valid_email() {
+		var form = $('.js-tabs-cont.is-active').find('#form');
+		form.each(function(){
+			var input = $(this).find('input[name="email"]');
+			var button = $(this).find('button[type="submit"]');
+			button.on('click', function() {
+				var value = input.val();
+				var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
+				var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
+
+				if (regMail.test(value) || regMailC.test(value)) {
+					input.removeClass('error');
+				} else {
+					input.addClass('error');
+				}
+				// if (regMailC.test(value)) {
+				// 	$(this).removeClass('error');
+				// } else {
+				// 	$(this).addClass('error');
+				// }
+			    
+			});
+		});
+	}
+	valid_email();
+	
 
     // phone
 	function val_phone() {

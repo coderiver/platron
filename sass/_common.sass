@@ -741,8 +741,12 @@ body
 			border: 1px solid #E0493A
 			color: #E74C3C
 			box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.10)
-			& + .error-text
-				display: block
+			& + label
+				&#phone-error,
+				&#email-error
+					margin-top: 3px
+					color: #E0493A
+					font-size: 12px
 	.error-text
 		margin-top: 3px
 		color: #E0493A
@@ -1041,7 +1045,7 @@ body
 			content: ''
 			left: 50%
 			margin-left: -10px
-			bottom: -10px
+			top: 100%
 			+arr(20, 10, rgba(0,0,0,0.66), b)
 
 // title
