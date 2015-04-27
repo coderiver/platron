@@ -289,7 +289,10 @@ head.ready(function() {
 	});
 
 	// card number
- 	$('input[name="number"]').mask("9999 9999 9999 9999?999", {placeholder:""});
+	// $('input[name="number"]').on('keyup', function() {
+	// 	$(this).mask("9999 9999 9999 9999?999", {placeholder:""});
+	// });
+ 	$('input[name="number"]').mask("9999 9999 9999 9999?999");
  	
  	// $('input[name="month"]').mask("99", {placeholder:""});
  	// $('input[name="year"]').mask("99", {placeholder:""});
@@ -380,16 +383,16 @@ head.ready(function() {
 		var value = $(this).val();
 		// var re = /[\sА-Яа-я]$/;
 		var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
-		var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
+		var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
 		// if (re.test(value)) {
 		// 	value = value.replace(re, '');
 		// 	$(this).val(value);
 		// }
-		if (regMail.test(value) || regMailC.test(value)) {
-			$(this).removeClass('error');
-		} else {
-			$(this).addClass('error');
-		}
+		// if (regMail.test(value) || regMailC.test(value)) {
+		// 	$(this).removeClass('error');
+		// } else {
+		// 	$(this).addClass('error');
+		// }
 		// if (regMailC.test(value)) {
 		// 	$(this).removeClass('error');
 		// } else {
