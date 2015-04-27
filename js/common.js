@@ -249,10 +249,6 @@ head.ready(function() {
 			year: "required",
 			cvv: "required",
 			name: "required",
-			email: {
-				required: true,
-				minlength: 3
-			},
 			phone: {
 				required: true,
 				minlength: 7
@@ -261,10 +257,6 @@ head.ready(function() {
 		messages: {
 			phone: {
 				required: "Необходимо указать номер телефона",
-				minlength: "Поле заполнено неверно"
-			},
-			email: {
-				required: "Необходимо указать email",
 				minlength: "Поле заполнено неверно"
 			}
 		}
@@ -360,15 +352,16 @@ head.ready(function() {
 	});
 
 	// card number
-	// $('input[name="number"]').on('keyup', function() {
-	// 	$(this).mask("9999 9999 9999 9999?999", {placeholder:""});
-	// });
- 	$('input[name="number"]').mask("9999 9999 9999 9999?999");
- 	
- 	// $('input[name="month"]').mask("99", {placeholder:""});
- 	// $('input[name="year"]').mask("99", {placeholder:""});
- 	// $('input[name="cvv"]').mask("999", {placeholder:""});
- 	
+	
+ 	$('input[name="number"]').mask("9999 9999 9999 9999?999", {placeholder: ''});
+ 	$('input[name="number"]').on('click', function() {
+		var value = $(this).val();
+		if (value == '   ') {
+			value = value.replace('');
+			$(this).val('', value);
+		}
+		
+	});
 
     // symbol month, year, cvv 
     $('input[name="month"], input[name="year"], input[name="cvv"]').on('keyup', function(){
@@ -383,7 +376,7 @@ head.ready(function() {
 	// symbol month, year
 	$('input[name="month"], input[name="year"]').on('change', function(){
 		var value = $(this).val();
-		if ($(this).val() < 2) {
+		if (value < 2) {
 			value = value.replace('');
 			$(this).val('', value);
 		}
@@ -405,15 +398,6 @@ head.ready(function() {
 		}
 	});
 
-	// year
-	// $('input[name="year"]').on('input', function(){
-	// 	var value = $(this).val();
-	// 	var firstChar = value.substring(0, 1);
-	// 	if (firstChar != 1) {
-	// 		value = value.replace('');
-	// 		$(this).val('', value);
-	// 	}
-	// });
 
 	// CVV
 	$('input[name="cvv"]').on('change', function(){
@@ -423,14 +407,6 @@ head.ready(function() {
 			$(this).val('', value);
 		}
 	});
-
-	// $('input[name="year"]').on('blur', function(){
-	// 	if($(this).val().length < 2) {
-	// 		$(this).addClass('error');
-	// 	} else {
-	// 		$(this).removeClass('error');
-	// 	}
-	// });
 
 	// name
     $('input[name="name"]').on('keyup', function(){
@@ -455,22 +431,43 @@ head.ready(function() {
 		form.each(function(){
 			var input = $(this).find('input[name="email"]');
 			var button = $(this).find('button[type="submit"]');
+			var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
+			var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
 			button.on('click', function() {
 				var value = input.val();
-				var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
-				var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
 
 				if (regMail.test(value) || regMailC.test(value)) {
 					input.removeClass('error');
+					$('.js-error-text2').hide();
+					$('.js-error-text1').hide();
 				} else {
 					input.addClass('error');
+					$('.js-error-text2').show();
+					$('.js-error-text1').hide();
 				}
-				// if (regMailC.test(value)) {
-				// 	$(this).removeClass('error');
-				// } else {
-				// 	$(this).addClass('error');
-				// }
+
+				if (value < 1) {
+					$(this).addClass('error');
+					$('.js-error-text1').show();
+					$('.js-error-text2').hide();
+				} else {
+					$(this).removeClass('error');
+					$('.js-error-text1').hide();
+				}
 			    
+			});
+			input.on('keyup', function(){
+				var value = input.val();
+
+				if (value > 0) {
+					$(this).removeClass('error');
+					$('.js-error-text1').hide();
+				}
+				if (regMail.test(value) || regMailC.test(value)) {
+					input.removeClass('error');
+					$('.js-error-text2').hide();
+					$('.js-error-text1').hide();
+				}
 			});
 		});
 	}
