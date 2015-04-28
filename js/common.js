@@ -479,8 +479,8 @@ head.ready(function() {
 		$('input[name="phone"]').on('focus', function(){
 			if ($(this).val() < 1) {
 				$(this).val('+7');
-			};
-			$(this).setCursorPosition(input.val().length);
+			}
+			// $(this).setCursorPosition(input.val().length);
 		});
 		$('input[name="phone"]').on('blur', function(){
 			if($(this).val().length < 7 || $(this).val().length > 64) {
