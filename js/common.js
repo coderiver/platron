@@ -436,6 +436,15 @@ head.ready(function() {
 			button.on('click', function() {
 				var value = input.val();
 
+				if (value < 1 && (regMail.test(value) || regMailC.test(value))) {
+					$(this).addClass('error');
+					$('.js-error-text1').show();
+					$('.js-error-text2').hide();
+				} else {
+					$(this).removeClass('error');
+					$('.js-error-text1').hide();
+				}
+
 				if (regMail.test(value) || regMailC.test(value)) {
 					input.removeClass('error');
 					$('.js-error-text2').hide();
@@ -443,15 +452,6 @@ head.ready(function() {
 				} else {
 					input.addClass('error');
 					$('.js-error-text2').show();
-					$('.js-error-text1').hide();
-				}
-
-				if (value < 1) {
-					$(this).addClass('error');
-					$('.js-error-text1').show();
-					$('.js-error-text2').hide();
-				} else {
-					$(this).removeClass('error');
 					$('.js-error-text1').hide();
 				}
 			    

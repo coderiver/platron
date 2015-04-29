@@ -692,26 +692,6 @@ body
 	margin: 20px 0
 	font-size: 0
 	+user-select(none)
-	&.form_card
-		position: relative
-		width: 530px
-		height: 240px
-		.form__in
-			position: relative
-			z-index: 3
-			+r(540)
-				padding: 10px
-				width: 365px
-			+r(400)
-				margin: 0
-				width: 270px
-		input
-			text-transform: uppercase
-		.form__col
-			+r(400)
-				padding-right: 0
-				.info
-					display: none
 	&.form_mail
 		margin: 8px 0 0
 		display: none
@@ -742,11 +722,35 @@ body
 			color: #E74C3C
 			box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.10)
 			& + label
-				&#phone-error,
-				&#email-error
+				&#phone-error
 					margin-top: 3px
 					color: #E0493A
 					font-size: 12px
+					display: none
+	&.form_card
+		position: relative
+		width: 530px
+		height: 240px
+		.form__in
+			position: relative
+			z-index: 3
+			+r(540)
+				padding: 10px
+				width: 365px
+			+r(400)
+				margin: 0
+				width: 270px
+			input
+				text-transform: uppercase
+				&.error
+					& + label
+						&#phone-error
+							display: none
+		.form__col
+			+r(400)
+				padding-right: 0
+				.info
+					display: none
 	.error-text
 		margin-top: 3px
 		color: #E0493A
