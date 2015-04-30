@@ -489,6 +489,14 @@ head.ready(function() {
 
 	// phone
 	function val_phone() {
+		$('input[name="phone"]').on('blur', function(){
+			var value = $(this).val();
+			if (value == '+7') {
+				value = value.replace('');
+				$(this).val('', value);
+				$(this).removeClass('error');
+			}
+		});
 		var form = $('.js-tabs-cont.is-active').find('#form');
 		$('input[name="phone"]').on('focus', function(){
 			if ($(this).val() < 1) {
@@ -497,14 +505,7 @@ head.ready(function() {
 			// $(this).setCursorPosition(input.val().length);
 		});
 		form.each(function(){
-			$('input[name="phone"]').on('blur', function(){
-				var value = $(this).val();
-				if (value == '+7') {
-					value = value.replace('');
-					$(this).val('', value);
-					$(this).removeClass('error');
-				}
-			});
+			
 			$('input[name="phone"]').on('keyup', function(){
 				var value = $(this).val();
 				var re = /[^0-9,+_""-]/;
