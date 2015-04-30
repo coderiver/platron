@@ -239,6 +239,11 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .form input:focus::-moz-placeholder { font-size: 0; }
 .form input:focus::-webkit-input-placeholder { font-size: 0; }
 .form input:focus::placeholder { font-size: 0; }
+.form input:active:-ms-input-placeholder { font-size: 0; }
+.form input:active:-moz-placeholder { font-size: 0; }
+.form input:active::-moz-placeholder { font-size: 0; }
+.form input:active::-webkit-input-placeholder { font-size: 0; }
+.form input:active::placeholder { font-size: 0; }
 .form input.error { border: 1px solid #e0493a; color: #e74c3c; box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); }
 .form input.error + label#phone-error { margin-top: 3px; color: #e0493a; font-size: 12px; display: none; }
 .form.form_card { position: relative; width: 530px; height: 240px; }

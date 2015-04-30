@@ -261,6 +261,14 @@ head.ready(function() {
 			}
 		}
 	});
+	$.validator.setDefaults({ 
+	  onkeyup: function(element) { 
+	      if (element.name == 'phone') { 
+	          return false; 
+	      }
+	  }
+	});
+
 	$("#form1").validate({
 		rules: {
 			number: "required",
@@ -352,11 +360,16 @@ head.ready(function() {
 	});
 
 	// card number
-	
- 	$('input[name="number"]').mask("9999 9999 9999 9999?999", {placeholder: ''});
- 	$('input[name="number"]').on('click', function() {
+	$('input[name="number"]').inputmask({
+		mask: '9999 9999 9999 9999999',
+		showMaskOnHover: false,
+		showMaskOnFocus: false,
+		placeholder: ''
+	});
+
+ 	$('input[name="number"]').on('change', function() {
 		var value = $(this).val();
-		if (value == '   ') {
+		if (value.length < 19) {
 			value = value.replace('');
 			$(this).val('', value);
 		}
@@ -474,34 +487,32 @@ head.ready(function() {
 	valid_email();
 	
 
-    // phone
+	// phone
 	function val_phone() {
-		$('input[name="phone"]').on('focus', function(){
-			if ($(this).val() < 1) {
-				$(this).val('+7');
-			}
-			// $(this).setCursorPosition(input.val().length);
-		});
-		$('input[name="phone"]').on('blur', function(){
-			if($(this).val().length < 7 || $(this).val().length > 64) {
-				$(this).addClass('error');
-			} else {
-				$(this).removeClass('error');
-			}
-		});
-	    $('input[name="phone"]').on('keyup', function(){
-			var value = $(this).val();
-			var re = /[^0-9,+_""-]/;
-			if (re.test(value)) {
-				value = value.replace(re, '');
-				$(this).val('+7', value);
-			}
-			// set max and min value
-			// if($(this).val().length < 7 || $(this).val().length > 12) {
-			// 	$(this).addClass('error');
-			// } else {
-			// 	$(this).removeClass('error');
-			// }
+		var form = $('.js-tabs-cont.is-active').find('#form');
+		form.each(function(){
+			$('input[name="phone"]').on('focus', function(){
+				if ($(this).val() < 1) {
+					$(this).val('+7');
+				}
+				// $(this).setCursorPosition(input.val().length);
+			});
+			$('input[name="phone"]').on('blur', function(){
+				var value = $(this).val();
+				if (value == '+7') {
+					value = value.replace('');
+					$(this).val('', value);
+					$(this).removeClass('error');
+				}
+			});
+			$('input[name="phone"]').on('keyup', function(){
+				var value = $(this).val();
+				var re = /[^0-9,+_""-]/;
+				if (re.test(value)) {
+					value = value.replace(re, '');
+					$(this).val('', value);
+				}
+			});
 		});
 	}
 	val_phone();
