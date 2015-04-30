@@ -490,13 +490,13 @@ head.ready(function() {
 	// phone
 	function val_phone() {
 		var form = $('.js-tabs-cont.is-active').find('#form');
+		$('input[name="phone"]').on('focus', function(){
+			if ($(this).val() < 1) {
+				$(this).val('+7');
+			}
+			// $(this).setCursorPosition(input.val().length);
+		});
 		form.each(function(){
-			$('input[name="phone"]').on('focus', function(){
-				if ($(this).val() < 1) {
-					$(this).val('+7');
-				}
-				// $(this).setCursorPosition(input.val().length);
-			});
 			$('input[name="phone"]').on('blur', function(){
 				var value = $(this).val();
 				if (value == '+7') {
