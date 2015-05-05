@@ -450,6 +450,14 @@ head.ready(function() {
 			button.on('click', function() {
 				var value = input.val();
 
+				if (value < 1) {
+					$(this).addClass('error');
+					$('.js-error-text1').show();
+					$('.js-error-text2').hide();
+				} else {
+					$(this).removeClass('error');
+					$('.js-error-text1').hide();
+				}
 
 				if (regMail.test(value) || regMailC.test(value)) {
 					input.removeClass('error');
@@ -460,27 +468,55 @@ head.ready(function() {
 					$('.js-error-text2').show();
 					$('.js-error-text1').hide();
 				}
+			    
+			});
+			// input.on('keyup', function(){
+			// 	var value = input.val();
+
+			// 	if (value > 0) {
+			// 		$(this).removeClass('is-error');
+			// 		$('.js-error-text1').hide();
+			// 	}
+			// 	if (regMail.test(value) || regMailC.test(value)) {
+			// 		input.removeClass('is-error');
+			// 		$('.js-error-text2').hide();
+			// 		$('.js-error-text1').hide();
+			// 	} else {
+			// 		input.addClass('is-error');
+			// 		$('.js-error-text2').show();
+			// 		$('.js-error-text1').hide();
+			// 	}
+				
+			// 	if (value.length == 0) {
+			// 		$(this).removeClass('is-error');
+			// 		$('.js-error-text2').hide();
+			// 	}
+			// });
+			input.on('change', function() {
+				var value = input.val();
+
 				if (value < 1) {
-					$(this).addClass('error');
+					$(this).addClass('is-error');
 					$('.js-error-text1').show();
 					$('.js-error-text2').hide();
 				} else {
-					$(this).removeClass('error');
+					$(this).removeClass('is-error');
 					$('.js-error-text1').hide();
 				}
-			    
-			});
-			input.on('keyup', function(){
-				var value = input.val();
 
-				if (value > 0) {
-					$(this).removeClass('error');
-					$('.js-error-text1').hide();
-				}
 				if (regMail.test(value) || regMailC.test(value)) {
-					input.removeClass('error');
+					input.removeClass('is-error');
 					$('.js-error-text2').hide();
 					$('.js-error-text1').hide();
+				} else {
+					input.addClass('is-error');
+					$('.js-error-text2').show();
+					$('.js-error-text1').hide();
+				}
+
+				if (value.length == 0) {
+					$(this).removeClass('is-error');
+					$('.js-error-text2').hide();
 				}
 			});
 		});
