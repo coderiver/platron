@@ -57,6 +57,7 @@ head.ready(function() {
 
 					if (!tabId) {
 						tabList.find('.tabs__item:first .js-tab-link').addClass("is-active");
+						tabList.find('.js-tabs-cont:first').addClass("is-active");
 						window.location.hash = tabs[0];
 						$('html, body').animate({
 							scrollTop: 0
