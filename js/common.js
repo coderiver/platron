@@ -101,11 +101,15 @@ head.ready(function() {
 					event.preventDefault();
 					var page = $(this).attr("href");
 					var pageTop = $(page).offset().top;
-					$('.js-tab-link').removeClass('is-active');
+					
+					setTimeout(function() {
+						$('.js-tab-link').removeClass('is-active');
+					}, 600);
 					
 					setTimeout(function() {
 						$(this).addClass('is-active');
 					}, 200);
+
 					$('html, body').animate({
 						scrollTop: 100
 					}, 600, function () {
