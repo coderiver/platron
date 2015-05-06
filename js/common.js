@@ -102,7 +102,10 @@ head.ready(function() {
 					var page = $(this).attr("href");
 					var pageTop = $(page).offset().top;
 					$('.js-tab-link').removeClass('is-active');
-					$(this).addClass('is-active');
+					
+					setTimeout(function() {
+						$(this).addClass('is-active');
+					}, 200);
 					$('html, body').animate({
 						scrollTop: 100
 					}, 600, function () {
