@@ -102,14 +102,6 @@ head.ready(function() {
 					var page = $(this).attr("href");
 					var pageTop = $(page).offset().top;
 					
-					setTimeout(function() {
-						$('.js-tab-link').removeClass('is-active');
-					}, 600);
-					
-					setTimeout(function() {
-						$(this).addClass('is-active');
-					}, 500);
-
 					$('html, body').animate({
 						scrollTop: 100
 					}, 600, function () {
@@ -118,6 +110,8 @@ head.ready(function() {
 						$(window).bind('hashchange', function() {
 							checkHash();
 						});
+						$('.js-tab-link').removeClass('is-active');
+						$(this).addClass('is-active');
 					});
 
 				});	
