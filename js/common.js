@@ -108,7 +108,7 @@ head.ready(function() {
 					
 					setTimeout(function() {
 						$(this).addClass('is-active');
-					}, 200);
+					}, 300);
 
 					$('html, body').animate({
 						scrollTop: 100
