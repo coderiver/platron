@@ -541,16 +541,14 @@ head.ready(function() {
 			}
 			// $(this).setCursorPosition(input.val().length);
 		});
-		form.each(function(){
 			
-			$('input[name="phone"]').on('keyup', function(){
-				var value = $(this).val();
-				var re = /[^0-9,+_""-]/;
-				if (re.test(value)) {
-					value = value.replace(re, '');
-					$(this).val('', value);
-				}
-			});
+		$('input[name="phone"]').on('keyup', function(){
+			var value = $(this).val();
+			var re = /[^0-9,+_ ""()-]/;
+			if (re.test(value)) {
+				value = value.replace(re, '');
+				$(this).val(value);
+			}
 		});
 	}
 	val_phone();
