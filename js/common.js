@@ -104,7 +104,7 @@ head.ready(function() {
 					
 					$('html, body').animate({
 						scrollTop: 100
-					}, 600, function () {
+					}, 300, function () {
 						window.location.hash = page;
 						// отслеживаем изменение хеша
 						$(window).bind('hashchange', function() {
