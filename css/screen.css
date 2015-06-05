@@ -26,10 +26,11 @@ body { font-size: 14px; line-height: 20px; font-family: "Open Sans", sans-serif;
 body.is-open-popup { overflow: hidden; }
 body.is-open-popup .popup { z-index: 200; visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 body.is-open-menu { overflow: hidden; }
-body.is-open-menu .btn-menu { position: fixed; top: 15px; left: 240px; width: 78px; z-index: 100; background: #f6f7f8; }
+body.is-open-menu .btn-menu { position: fixed; top: 75px; left: 240px; height: 80px; width: 80px; z-index: 100; background: #f6f7f8; }
 body.is-open-menu .btn-menu:hover { background: white; }
 body.is-open-menu .tabs__group { left: 0; overflow-y: auto; }
 body.is-open-menu .overlay { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; z-index: 99; visibility: visible; }
+body.is-open-menu .header { position: fixed; top: 0; left: 0; right: 0; z-index: 101; }
 body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
 
 .in, .header .header__in, .wrapper, .footer .footer__in { max-width: 940px; margin: 0 auto; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *zoom: 1; }
@@ -108,13 +109,17 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .btn.btn_big { padding: 20px 33px; height: 60px; }
 
 .out { min-height: 100%; padding-bottom: 174px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-@media only screen and (max-width: 800px) { .out.out_ind .header__in { padding: 0 0 0 50px; } }
 
 .header { margin-bottom: 20px; padding: 12px 0 13px; background: white; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1); }
 .header .header__in { position: relative; padding: 0 158px 0 240px; font-size: 0; }
 @media only screen and (max-width: 800px) { .header .header__in { padding: 0; } }
 
-.btn-menu { position: absolute; left: 0; top: 0; margin-top: -15px; width: 50px; height: 75px; background: white; -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; display: none; }
+.opted { position: relative; padding-left: 60px; }
+.opted .opted__item { position: relative; padding: 0 15px; color: white; height: 45px; line-height: 44px; font-size: 16px; background: #44bb55; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.opted .opted__item:before { position: absolute; content: ""; top: 50%; left: -5px; margin-top: -5px; width: 0px; height: 0px; border-style: solid; border-width: 5px 5px 5px 0; border-color: transparent #44bb55 transparent transparent; }
+@media only screen and (max-width: 480px) { .opted .opted__item { font-size: 14px; } }
+
+.btn-menu { position: absolute; left: 0; top: 0; width: 50px; height: 45px; background: white; -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; display: none; }
 .btn-menu:before { position: absolute; content: ""; left: 50%; top: 50%; -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background: url("../img/svg/menu.svg") no-repeat 0 0; -moz-background-size: 30px 30px; -o-background-size: 30px 30px; -webkit-background-size: 30px 30px; background-size: 30px 30px; width: 30px; height: 30px; display: inline-block; }
 @media only screen and (max-width: 800px) { .btn-menu { display: block; } }
 
@@ -161,9 +166,11 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .wrapper { position: relative; min-height: 589px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; overflow: hidden; background: white; -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1); *zoom: 1; }
 .wrapper:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 940px) { .wrapper { margin: 0 10px; min-height: inherit; } }
-.wrapper.wrapper_tabs { min-height: auto; }
+.wrapper.wrapper_tabs { min-height: 516px; }
 @media only screen and (max-width: 800px) { .wrapper.wrapper_tabs:before { display: none; } }
 .wrapper.wrapper_tabs:before { position: absolute; content: ""; top: 0; left: 0; bottom: 0; width: 239px; border-right: 1px solid #e5e7ea; background: #f6f7f8; }
+.wrapper.wrapper_opted { margin-bottom: 20px; background: none; min-height: 0px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; display: none; }
+@media only screen and (max-width: 800px) { .wrapper.wrapper_opted { display: block; } }
 
 .center { position: relative; margin: 0 auto; padding: 65px 0 42px; width: 622px; text-align: center; }
 .center.center_mod { padding-top: 120px; }
@@ -200,11 +207,12 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .tabs { *zoom: 1; }
 .tabs:after { content: " "; display: table; clear: both; }
 .tabs .tabs__group { position: relative; float: left; width: 240px; z-index: 2; border-right: 1px solid #e5e7ea; background: #f6f7f8; -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-@media only screen and (max-width: 800px) { .tabs .tabs__group { position: fixed; z-index: 100; top: 0; left: -240px; overflow-y: auto; bottom: 0; } }
+@media only screen and (max-width: 800px) { .tabs .tabs__group { position: fixed; z-index: 100; top: 75px; left: -240px; overflow-y: auto; bottom: 0; } }
 .tabs .tabs__containers { overflow: hidden; max-width: 700px; }
 @media only screen and (max-width: 800px) { .tabs .tabs__containers { max-width: 100%; } }
 .tabs .link:hover:before { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .tabs .container { display: none; }
+.tabs .container.is-active { display: block; }
 .tabs .container.is-target, .tabs .container:target { display: block; }
 
 .container { padding: 22px 30px 30px; background: white; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }

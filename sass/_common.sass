@@ -69,9 +69,10 @@ body
 		overflow: hidden
 		.btn-menu
 			position: fixed
-			top: 15px
+			top: 75px
 			left: 240px
-			width: 78px
+			height: 80px
+			width: 80px
 			z-index: 100
 			background: #f6f7f8
 			&:hover
@@ -83,6 +84,12 @@ body
 			+opacity(1)
 			z-index: 99
 			visibility: visible
+		.header
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 101
 	a
 		text-decoration: none
 		+transition(all .1s linear)
@@ -284,10 +291,6 @@ body
 	min-height: 100%
 	padding-bottom: 174px
 	+box
-	&.out_ind
-		.header__in
-			+r(800)
-				padding: 0 0 0 50px
 
 // header
 .header
@@ -303,14 +306,37 @@ body
 		+r(800)
 			padding: 0
 
+// opted
+.opted
+	position: relative
+	padding-left: 60px
+	.opted__item
+		position: relative
+		padding: 0 15px
+		color: #fff
+		height: 45px
+		line-height: 44px
+		font-size: 16px
+		background: #44bb55
+		+border-radius(8px)
+		+box
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: -5px
+			margin-top: -5px
+			+arr(5,10,#44bb55,l)
+		+r(480)
+			font-size: 14px
+
 // btn-menu
 .btn-menu
 	position: absolute
 	left: 0
 	top: 0
-	margin-top: -15px
 	width: 50px
-	height: 75px
+	height: 45px
 	background: #fff
 	+transition(left .1s linear)
 	display: none
@@ -475,7 +501,7 @@ body
 		margin: 0 10px
 		min-height: inherit
 	&.wrapper_tabs
-		min-height: auto
+		min-height: 516px
 		+r(800)
 			&:before
 				display: none
@@ -488,6 +514,15 @@ body
 			width: 239px
 			border-right: 1px solid #e5e7ea
 			background: #f6f7f8
+	&.wrapper_opted
+		margin-bottom: 20px
+		background: none
+		min-height: 0px
+		+border-radius(0)
+		+box-shadow(none)
+		display: none
+		+r(800)
+			display: block
 
 // center
 .center
@@ -606,7 +641,7 @@ body
 		+r(800)
 			position: fixed
 			z-index: 100
-			top: 0
+			top: 75px
 			left: -240px
 			overflow-y: auto
 			bottom: 0
@@ -622,6 +657,8 @@ body
 				+opacity(1)
 	.container
 		display: none
+		&.is-active
+			display: block
 	.container.is-target,
 	.container:target
 		display: block

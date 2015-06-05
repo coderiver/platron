@@ -59,6 +59,10 @@ head.ready(function() {
 						tabList.find('.tabs__item:first .js-tab-link').addClass("is-active");
 						tabList.find('.js-tabs-cont:first').addClass("is-active");
 						window.location.hash = tabs[0];
+
+						var tabText = tabList.find(".js-tab-link.is-active").text();
+						$('.js-opted-sel').text(tabText);
+
 						$('html, body').animate({
 							scrollTop: 0
 						});
@@ -87,7 +91,8 @@ head.ready(function() {
 							changeTab(tabId);
 							result = true;
 							ltie9 ? setTarget(tabId) : false;
-
+							var tabText = tabList.find(".js-tab-link.is-active").text();
+							$('.js-opted-sel').text(tabText);
 							return false;
 						};
 					});
@@ -113,6 +118,9 @@ head.ready(function() {
 						$('.js-tab-link').removeClass('is-active');
 						$(this).addClass('is-active');
 					});
+
+					var tabText = tabList.find(".js-tab-link.is-active").text();
+					$('.js-opted-sel').text(tabText);
 
 				});	
 			}
