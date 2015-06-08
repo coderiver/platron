@@ -108,7 +108,7 @@ head.ready(function() {
 					var pageTop = $(page).offset().top;
 					
 					$('html, body').animate({
-						scrollTop: 100
+						scrollTop: 80
 					}, 300, function () {
 						window.location.hash = page;
 						// отслеживаем изменение хеша
