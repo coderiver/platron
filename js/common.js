@@ -93,6 +93,9 @@ head.ready(function() {
 							ltie9 ? setTarget(tabId) : false;
 							var tabText = tabList.find(".js-tab-link.is-active").text();
 							$('.js-opted-sel').text(tabText);
+							$('html, body').animate({
+								scrollTop: 80
+							}, 300);
 							return false;
 						};
 					});
