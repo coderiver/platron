@@ -42,9 +42,11 @@ head.ready(function() {
 				ltie9 = $.browser.msie && $.browser.version <= 9;
 				
 			if ($(this).find(tabList).length) {
+				$('html, body').animate({
+					scrollTop: 80
+				});
 				// смена таба
 				function changeTab(tabId){
-
 					tabList.find(".js-tab-link.is-active").removeClass("is-active");
 					$('.js-tabs-cont').removeClass("is-active");
 					$(tabId).addClass("is-active");
@@ -93,9 +95,6 @@ head.ready(function() {
 							ltie9 ? setTarget(tabId) : false;
 							var tabText = tabList.find(".js-tab-link.is-active").text();
 							$('.js-opted-sel').text(tabText);
-							$('html, body').animate({
-								scrollTop: 80
-							}, 300);
 							return false;
 						};
 					});
@@ -112,7 +111,7 @@ head.ready(function() {
 					
 					$('html, body').animate({
 						scrollTop: 80
-					}, 300, function () {
+					}, 400, function () {
 						window.location.hash = page;
 						// отслеживаем изменение хеша
 						$(window).bind('hashchange', function() {
