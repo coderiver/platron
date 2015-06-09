@@ -37,7 +37,7 @@ head.ready(function() {
 	// tabs
 	function tabs(){
 		$('body').each(function(){
-			var	tabs = ['#card', '#robox', '#purse', '#terminals', '#cashbox', '#from-your-balance', '#internet-banking'],
+			var	tabs = ['#card', '#robox', '#purse', '#terminals', '#cashbox', '#from_your_balance', '#internet_banking'],
 				tabList = $('.js-tabs');
 				ltie9 = $.browser.msie && $.browser.version <= 9;
 				
@@ -55,6 +55,7 @@ head.ready(function() {
 						if (attr == tabId) {
 							$(this).addClass('is-active');
 						};
+						
 					});
 
 					if (!tabId) {
@@ -104,26 +105,48 @@ head.ready(function() {
 				checkHash();			
 							
 				$('.js-tab-link').on('click', function (event) {
-					$('body').removeClass('is-open-menu');
-					event.preventDefault();
 					var page = $(this).attr("href");
-					var pageTop = $(page).offset().top;
-					
-					$('html, body').animate({
-						scrollTop: 80
-					}, 400, function () {
-						window.location.hash = page;
-						// отслеживаем изменение хеша
-						$(window).bind('hashchange', function() {
-							checkHash();
-						});
-						$('.js-tab-link').removeClass('is-active');
-						$(this).addClass('is-active');
-					});
+					// var pageTop = $(page).offset().top;
 
+					$('body').removeClass('is-open-menu');
+
+					event.preventDefault();
+
+					if ($('html').hasClass('ff' || 'ie')) {
+						setTimeout(function(){
+							
+							window.location.hash = page;
+							// отслеживаем изменение хеша
+							$(window).bind('hashchange', function() {
+								checkHash();
+							});
+
+							$('.js-tab-link').removeClass('is-active');
+							$(this).addClass('is-active');
+
+							$('html, body').animate({
+								scrollTop: 80
+							});
+						}, 300);
+						return false;
+					}
+					else {
+						$('html, body').animate({
+							scrollTop: 80
+						}, 300, function () {
+
+							window.location.hash = page;
+							// отслеживаем изменение хеша
+							$(window).bind('hashchange', function() {
+								checkHash();
+							});
+
+							$('.js-tab-link').removeClass('is-active');
+							$(this).addClass('is-active');
+						});
+					}
 					var tabText = tabList.find(".js-tab-link.is-active").text();
 					$('.js-opted-sel').text(tabText);
-
 				});	
 			}
 			
