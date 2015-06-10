@@ -49,7 +49,6 @@ head.ready(function() {
 			var tabText = $('.js-tabs').find("li.is-active a").text();
 			$('.js-opted-sel').text(tabText);
 
-			payment_method();
 			alfa_click();
 		}
 		else {
@@ -122,26 +121,18 @@ head.ready(function() {
 
 	// payment
 	function payment_method(){
-		var payment = $('.js-tabs-content.is-active').find('.js-payment');
-		payment.each(function(){
-			var payment_item = $(this).find('.js-payment-item');
-
+		$('.js-payment').find('.js-payment-item:first').addClass("is-active");
+		$('.js-payment-item').on('click', function(){
+			var payment_item = $('.js-tabs-content.is-active .js-payment-item');
 			if(payment_item.hasClass('is-active')) {
-				$('.js-payment-item').on('click', function(){
-					payment_item.removeClass('is-active');
-					$(this).addClass('is-active');
+				payment_item.removeClass('is-active');
+				$(this).addClass('is-active');
 
-					if ($(this).hasClass('is-disable')) {
-						$(this).removeClass('is-active');
-					}
-					alfa_click();
-
-				});
+				if ($(this).hasClass('is-disable')) {
+					$(this).removeClass('is-active');
+				}
+				alfa_click();
 			}
-			else {
-				payment.find('.js-payment-item:first').addClass("is-active");
-			}
-
 		});
 	}
 	payment_method();
@@ -508,7 +499,7 @@ head.ready(function() {
 	val_phone();
 
 	// menu mob
-	$('.js-menu').on('click', function(){
+	$('.js-menu, .js-opted-sel').on('click', function(){
 		$('body').toggleClass('is-open-menu');
 	});
 	$('.js-overlay').on('click', function(){

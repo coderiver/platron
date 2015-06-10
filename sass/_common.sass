@@ -318,9 +318,12 @@ body
 		height: 45px
 		line-height: 44px
 		font-size: 16px
+		cursor: pointer
 		background: #44bb55
 		+border-radius(8px)
 		+box
+		&:active
+			background: darken(#44bb55, 5)
 		&:before
 			position: absolute
 			content: ''
