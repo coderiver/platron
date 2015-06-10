@@ -484,7 +484,7 @@ head.ready(function() {
 			if ($(this).val() < 1) {
 				$(this).val('+7');
 			}
-			// $(this).setCursorPosition(input.val().length);
+			$(this).setCursorPosition(input.val().length);
 		});
 			
 		$('input[name="phone"]').on('keyup', function(){
