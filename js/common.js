@@ -35,124 +35,46 @@ head.ready(function() {
 	order_info();
 
 	// tabs
-	function tabs(){
-		$('body').each(function(){
-			var	tabs = ['#card', '#robox', '#purse', '#terminals', '#cashbox', '#from_your_balance', '#internet_banking'],
-				tabList = $('.js-tabs');
-				ltie9 = $.browser.msie && $.browser.version <= 9;
-				
-			if ($(this).find(tabList).length) {
-				$('html, body').animate({
-					scrollTop: 80
-				});
-				// смена таба
-				function changeTab(tabId){
-					tabList.find(".js-tab-link.is-active").removeClass("is-active");
-					$('.js-tabs-cont').removeClass("is-active");
-					$(tabId).addClass("is-active");
-					tabList.find('.js-tab-link').each(function () {
-						var attr = $(this).attr('href');
-						if (attr == tabId) {
-							$(this).addClass('is-active');
-						};
-						
-					});
+	function tabsLoad() {
+		var hash = window.location.hash,
+			tabText = $('.js-tabs').find("li:first a").text();
+		$('.js-opted-sel').text(tabText);
 
-					if (!tabId) {
-						tabList.find('.tabs__item:first .js-tab-link').addClass("is-active");
-						tabList.find('.js-tabs-cont:first').addClass("is-active");
-						window.location.hash = tabs[0];
+		if (hash) {
+			$('[href="'+hash+'"]').parents(".js-tabs-group").find(".js-tabs-content").removeClass("is-active");
+			$('[data-id="'+hash+'"]').addClass("is-active");
+			$('[href="'+hash+'"]').parents(".js-tabs").find("li").removeClass("is-active");
+			$('[href="'+hash+'"]').parent().addClass("is-active");
 
-						var tabText = tabList.find(".js-tab-link.is-active").text();
-						$('.js-opted-sel').text(tabText);
+			var tabText = $('.js-tabs').find("li.is-active a").text();
+			$('.js-opted-sel').text(tabText);
 
-						$('html, body').animate({
-							scrollTop: 0
-						});
-					}
-					payment_method();
-					alfa_click();
+			payment_method();
+			alfa_click();
+		}
+		else {
+			$('.js-tabs').each(function(){
+				$(".js-tabs").find("li").removeClass("is-active");
+				$(".js-tabs-group").find(".js-tabs-content").removeClass("is-active");
 
-				}
-
-				// проверка хеша
-				function checkHash(){
-					var	tabId = window.location.hash,
-						result = false;
-
-					// для ИЕ6-8 эмуляция :target
-					function setTarget(obj){
-						$('.js-tabs-cont').removeClass('is-target');
-						$(tabId).addClass('is-target');
-					};
-
-					// при загрузке страницы проверяем какую вкладку следует открыть	
-					$.each(tabs, function(){
-
-						if (tabId == this) 
-						{
-							changeTab(tabId);
-							result = true;
-							ltie9 ? setTarget(tabId) : false;
-							var tabText = tabList.find(".js-tab-link.is-active").text();
-							$('.js-opted-sel').text(tabText);
-							return false;
-						};
-					});
-
-					if (result == false) changeTab();
-				};
-				checkHash();			
-							
-				$('.js-tab-link').on('click', function (event) {
-					var page = $(this).attr("href");
-					// var pageTop = $(page).offset().top;
-
-					$('body').removeClass('is-open-menu');
-
-					event.preventDefault();
-
-					if ($('html').hasClass('ff' || 'ie')) {
-						setTimeout(function(){
-							
-							window.location.hash = page;
-							// отслеживаем изменение хеша
-							$(window).bind('hashchange', function() {
-								checkHash();
-							});
-
-							$('.js-tab-link').removeClass('is-active');
-							$(this).addClass('is-active');
-
-							$('html, body').animate({
-								scrollTop: 80
-							});
-						}, 300);
-						return false;
-					}
-					else {
-						$('html, body').animate({
-							scrollTop: 80
-						}, 300, function () {
-
-							window.location.hash = page;
-							// отслеживаем изменение хеша
-							$(window).bind('hashchange', function() {
-								checkHash();
-							});
-
-							$('.js-tab-link').removeClass('is-active');
-							$(this).addClass('is-active');
-						});
-					}
-					var tabText = tabList.find(".js-tab-link.is-active").text();
-					$('.js-opted-sel').text(tabText);
-				});	
-			}
-			
-		});	
+				$(this).find('li:first').addClass("is-active");
+				$(this).next().addClass("is-active");
+			});
+		}
+		$(".js-tabs").find("li a").on('click', function(){
+			$('body').removeClass('is-open-menu');
+		});
 	}
-	tabs();
+	tabsLoad();
+	$(window).bind("hashchange", function() {
+		var first = $(this).find('li:first');
+		tabsLoad();
+		if (first.hasClass('is-active')) {
+			first.next().removeClass('is-active');
+			$(this).next().next().removeClass('is-active');
+		}
+	});
+
 
 	// info
 	$('.js-info-btn').on('click', function(){
@@ -200,20 +122,18 @@ head.ready(function() {
 
 	// payment
 	function payment_method(){
-		var payment = $('.js-tabs-cont.is-active').find('.js-payment');
+		var payment = $('.js-tabs-content.is-active').find('.js-payment');
 		payment.each(function(){
 			var payment_item = $(this).find('.js-payment-item');
 
 			if(payment_item.hasClass('is-active')) {
-				$('.js-payment-item').on('click', function(event){
-					event.preventDefault();
+				$('.js-payment-item').on('click', function(){
 					payment_item.removeClass('is-active');
 					$(this).addClass('is-active');
 
 					if ($(this).hasClass('is-disable')) {
 						$(this).removeClass('is-active');
 					}
-
 					alfa_click();
 
 				});

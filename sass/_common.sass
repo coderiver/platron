@@ -646,23 +646,27 @@ body
 			left: -240px
 			overflow-y: auto
 			bottom: 0
-	.tabs__containers
+	li
+		&.is-active
+			.link
+				background: #fff
+				&:before
+					visibility: visible
+					+opacity(1)
+	.link
+		&:hover
+			.link
+				&:before
+					visibility: visible
+					+opacity(1)
+	.container
+		display: none
 		overflow: hidden
 		max-width: 700px
 		+r(800)
 			max-width: 100%
-	.link
-		&:hover
-			&:before
-				visibility: visible
-				+opacity(1)
-	.container
-		display: none
 		&.is-active
 			display: block
-	.container.is-target,
-	.container:target
-		display: block
 
 // container
 .container
@@ -692,11 +696,6 @@ body
 		+opacity(0)
 		visibility: hidden
 		background: #fff
-	&.is-active
-		background: #fff
-		&:before
-			visibility: visible
-			+opacity(1)
 
 // accept
 .accept
@@ -1133,6 +1132,7 @@ body
 		height: 129px
 		text-align: center
 		vertical-align: top
+		cursor: pointer
 		border: 1px solid #E5E7EA
 		+box-shadow(0px 1px 2px 0px rgba(0,0,0,0.03))
 		+border-radius(4px)
