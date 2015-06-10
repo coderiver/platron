@@ -386,7 +386,7 @@ head.ready(function() {
 
     // Email
 	function valid_email() {
-		var form = $('.js-tabs-cont.is-active').find('#form');
+		var form = $('.js-tabs-content.is-active').find('#form');
 		form.each(function(){
 			var input = $(this).find('input[name="email"]');
 			var button = $(this).find('button[type="submit"]');

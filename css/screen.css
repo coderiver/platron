@@ -117,7 +117,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .opted { position: relative; padding-left: 60px; }
 .opted .opted__item { position: relative; padding: 0 15px; color: white; height: 45px; line-height: 44px; font-size: 16px; cursor: pointer; background: #44bb55; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .opted .opted__item:active { background: #3da84d; }
-.opted .opted__item:before { position: absolute; content: ""; top: 50%; left: -5px; margin-top: -5px; width: 0px; height: 0px; border-style: solid; border-width: 5px 5px 5px 0; border-color: transparent #44bb55 transparent transparent; }
+.opted .opted__item:before { position: absolute; content: ""; top: 50%; right: 100%; margin-top: -5px; width: 0px; height: 0px; border-style: solid; border-width: 5px 5px 5px 0; border-color: transparent #44bb55 transparent transparent; }
 @media only screen and (max-width: 480px) { .opted .opted__item { font-size: 14px; } }
 
 .btn-menu { position: absolute; left: 0; top: 0; width: 50px; height: 45px; background: white; -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; display: none; }
