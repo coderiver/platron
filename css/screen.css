@@ -334,6 +334,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .bg-card.bg-card_cvv:before { position: absolute; content: ""; left: 210px; top: 30px; right: 0; height: 40px; background: black; }
 
 .info { position: absolute; right: 0; top: 54%; cursor: pointer; display: inline-block; }
+.info.info_rel { position: relative; top: auto; right: auto; }
 .info .ico { cursor: pointer; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .info:hover .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info.is-active .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
