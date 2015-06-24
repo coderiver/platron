@@ -422,6 +422,11 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 
 .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; z-index: -1; background: rgba(0, 0, 0, 0.5); -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; }
 
+.row { *zoom: 1; }
+.row:after { content: " "; display: table; clear: both; }
+
+.is-right { float: right; }
+
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
 .l .l-col1 { float: left; width: 20%; }
