@@ -34,11 +34,11 @@
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
-// ## fonts 
+// ## fonts
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
+// +font(book, cytiapro-black-webfont)
 // =book
-// 	font-family: "book", Arial, sans-serif 
+// 	font-family: "book", Arial, sans-serif
 // insert pics into css
 // div
 // 	+pic("blabla.png")
@@ -49,13 +49,13 @@
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic-ext")
 
-+font(ruble, ALSRubl)  
++font(ruble, ALSRubl)
 =ruble
 	font-family: "ruble", Arial, sans-serif
 	font-weight: normal
 
 body
-	font-size: 14px 
+	font-size: 14px
 	line-height: 20px
 	font-family: 'Open Sans', sans-serif
 	background: #e9eef2
@@ -96,7 +96,7 @@ body
 		+transition(all .1s linear)
 
 
-// common blocks      
+// common blocks
 
 // in
 .in
@@ -230,7 +230,7 @@ body
 	+r(720)
 		height: 40px
 	+r(460)
-		width: 100%                           
+		width: 100%
 	&.btn_white
 		padding: 15px 14px
 		color: #666
@@ -452,7 +452,7 @@ body
 			+svg(ruble, 8, 13)
 	.order__gray
 		font-size: 12px
-		color: #9B9B9B 
+		color: #9B9B9B
 	.order__text
 		overflow: hidden
 		text-overflow: ellipsis
@@ -461,7 +461,7 @@ body
 			padding-right: 78px
 		+r(800)
 			padding-right: 95px
-			
+
 	.order__more,
 	.order__close
 		color: #00c7f4
@@ -735,6 +735,8 @@ body
 	&.form_mail
 		margin: 8px 0 0
 		display: none
+	&.form_wrap
+		margin: 20px -2%
 	input
 		padding: 0 8px
 		height: 32px
@@ -834,7 +836,6 @@ body
 			+r(540)
 				top: 64px
 				right: 10px
-
 	.form__field
 		font-size: 0
 	.form__label
@@ -843,15 +844,15 @@ body
 		font-weight: 600
 		line-height: 22px
 	.form__item
-		margin-left: 4%
 		width: 48%
+		margin-bottom: 10px
+		padding: 0 2%
 		vertical-align: top
 		display: inline-block
+		+box
 		+r(540)
 			margin: 0
 			width: 100%
-		&:first-child
-			margin-left: 0
 		&.form__item_alfa
 			display: none
 			+r(480)
@@ -1354,7 +1355,7 @@ body
 		background: #E75040
 		+r(740)
 			font-size: 18px
-		.ico 
+		.ico
 			margin-right: 24px
 	.popup__close
 		position: absolute

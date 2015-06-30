@@ -235,6 +235,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 
 .form { margin: 20px 0; font-size: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 .form.form_mail { margin: 8px 0 0; display: none; }
+.form.form_wrap { margin: 20px -2%; }
 .form input { padding: 0 8px; height: 32px; width: 100%; font-size: 16px; color: #333333; line-height: 24px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; font-family: "Open Sans", sans-serif; font-weight: 400; border: 1px solid #cdd0d4; -moz-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); background: white; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .form input:-ms-input-placeholder { color: #bdbebe; }
 .form input:-moz-placeholder, .form input::-moz-placeholder { color: #bdbebe; opacity: 1; }
@@ -273,9 +274,8 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 @media only screen and (max-width: 540px) { .form .form__col.form__col_cvv { top: 64px; right: 10px; } }
 .form .form__field { font-size: 0; }
 .form .form__label { color: #666666; font-size: 14px; font-weight: 600; line-height: 22px; }
-.form .form__item { margin-left: 4%; width: 48%; vertical-align: top; display: inline-block; }
+.form .form__item { width: 48%; margin-bottom: 10px; padding: 0 2%; vertical-align: top; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 @media only screen and (max-width: 540px) { .form .form__item { margin: 0; width: 100%; } }
-.form .form__item:first-child { margin-left: 0; }
 .form .form__item.form__item_alfa { display: none; }
 @media only screen and (max-width: 480px) { .form .form__item.form__item_alfa { margin-top: 15px; } }
 .form .form__item.is-active { display: inline-block; }
