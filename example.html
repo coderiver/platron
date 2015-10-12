@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -82,17 +82,6 @@
 			<!-- container card -->
 			<div class="container js-tabs-content" data-id="#card">
 				<h3 class="title"><span class="ico ico_lock"></span>Безопасная оплата банковской картой</h3>
-				<!-- accept -->
-				<div class="accept">
-					<div class="accept__text">Мы принимаем</div>
-					<ul class="accept__list">
-						<li><i class="ico ico_visa" title="Visa"></i></li>
-						<li><i class="ico ico_mc" title="Mastercard"></i></li>
-						<li><i class="ico ico_p" title="Ф"></i></li>
-						<li><i class="ico ico_amex" title="Amex"></i></li>
-						<li><i class="ico ico_jcb" title="JCB"></i></li>
-					</ul>
-				</div>
 				<form id="form">
 					<!-- form-card -->
 					<div class="form form_card">
@@ -107,30 +96,30 @@
 								<!-- info -->
 								<div class="info js-info">
 									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">16 цифр на лицевой стороне карты</div>
+									<div class="info__window">16-18 цифр на лицевой стороне карты</div>
 								</div>
 							</div>
 							<div class="form__col form__col_small">
 								<div class="form__label">Срок действия</div>
 								<div class="form__row">
 									<div class="form__field">
-										<input type="text" name="month" placeholder="11" maxlength="2">
+										<input type="text" name="month" placeholder="XX" maxlength="2">
 									</div>
 									<span>/</span>
 									<div class="form__field">
-										<input type="text" name="year" placeholder="16" maxlength="2">
+										<input type="text" name="year" placeholder="YY" maxlength="2">
 									</div>
 								</div>
 								<!-- info -->
 								<div class="info js-info">
 									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">Срок действия карты</div>
+									<div class="info__window">Месяц и год срока действия карты</div>
 								</div>
 							</div>
 							<div class="form__col">
-								<div class="form__label">Держатель карты</div>
+								<div class="form__label">Имя и фамилия владельца карты</div>
 								<div class="form__field">
-									<input type="text" name="name" placeholder="KONSTANTIN ALLIGATOR" maxlength="256">
+									<input type="text" name="name" placeholder="ЛАТИНИЦЕЙ" maxlength="256">
 								</div>
 								<!-- info -->
 								<div class="info js-info">
@@ -153,14 +142,41 @@
 							</div>
 						</div>
 					</div>
+				<!-- accept -->
+				<div class="accept">
+					<div class="accept__text">Мы принимаем</div>
+					<ul class="accept__list">
+						<li><i class="ico ico_visa" title="Visa"></i></li>
+						<li><i class="ico ico_mc" title="MasterCard"></i></li>
+						<li><i class="ico ico_p" title="Diners Club"></i></li>
+						<li><i class="ico ico_amex" title="American Express"></i></li>
+						<li><i class="ico ico_jcb" title="JCB"></i></li>
+					</ul>
+				</div>
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
+						</div>
+						<div class="form__item">
+							<div class="form__label">E-mail</div>
+							<div class="form__field">
+								<input type="text" name="email" placeholder="ivanov@gmail.com">
+								<div class="error-text js-error-text1">Необходимо указать email</div>
+								<div class="error-text js-error-text2">Поле заполнено неверно</div>
+							</div>
+							<div class="form__text">Нужен для оповещения о результатах платежа</div>
+						</div>
+						<div class="form__item">
+							<div class="form__label">Номер телефона</div>
+							<div class="form__field">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
+							</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 						<div class="form__item">
 							<div class="form__label">E-mail</div>
@@ -182,7 +198,19 @@
 								<div class="form__text">Нужен для оповещения о результатах платежа</div>
 							</div>
 						</div>
+						<div class="row">
+							<div class="form__item is-right">
+								<div class="form__label">E-mail</div>
+								<div class="form__field">
+									<input type="text" name="email" placeholder="ivanov@gmail.com">
+									<div class="error-text js-error-text1">Необходимо указать email</div>
+									<div class="error-text js-error-text2">Поле заполнено неверно</div>
+								</div>
+								<div class="form__text">Нужен для оповещения о результатах платежа</div>
+							</div>
+						</div>
 					</div>
+					
 					<!-- checkbox -->
 					<label class="checkbox" for="checkbox">
 						<input class="js-open-myemail" id="checkbox" type="checkbox">
@@ -210,17 +238,6 @@
 			<!-- container robox -->
 			<div class="container js-tabs-content" data-id="#robox">
 				<h3 class="title"><span class="ico ico_lock"></span>Безопасная оплата банковской картой</h3>
-				<!-- accept -->
-				<div class="accept">
-					<div class="accept__text">Мы принимаем</div>
-					<ul class="accept__list">
-						<li><i class="ico ico_visa"></i></li>
-						<li><i class="ico ico_mc"></i></li>
-						<li><i class="ico ico_p"></i></li>
-						<li><i class="ico ico_amex"></i></li>
-						<li><i class="ico ico_jcb"></i></li>
-					</ul>
-				</div>
 				<form id="form1">
 					<!-- form-card -->
 					<div class="form form_card">
@@ -235,30 +252,30 @@
 								<!-- info -->
 								<div class="info js-info">
 									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">16 цифр на лицевой стороне карты</div>
+									<div class="info__window">16-18 цифр на лицевой стороне карты</div>
 								</div>
 							</div>
 							<div class="form__col form__col_small">
 								<div class="form__label">Срок действия</div>
 								<div class="form__row">
 									<div class="form__field">
-										<input type="text" name="month" placeholder="11">
+										<input type="text" name="month" placeholder="XX">
 									</div>
 									<span>/</span>
 									<div class="form__field">
-										<input type="text" name="year" placeholder="16">
+										<input type="text" name="year" placeholder="YY">
 									</div>
 								</div>
 								<!-- info -->
 								<div class="info js-info">
 									<i class="ico ico_info js-info-btn"></i>
-									<div class="info__window">Срок действия карты</div>
+									<div class="info__window">Месяц и год срока действия карты</div>
 								</div>
 							</div>
 							<div class="form__col">
-								<div class="form__label">Держатель карты</div>
+								<div class="form__label">Имя и фамилия владельца карты</div>
 								<div class="form__field">
-									<input type="text" name="name" placeholder="KONSTANTIN ALLIGATOR">
+									<input type="text" name="name" placeholder="ЛАТИНИЦЕЙ">
 								</div>
 								<!-- info -->
 								<div class="info js-info">
@@ -281,14 +298,25 @@
 							</div>
 						</div>
 					</div>
+				<!-- accept -->
+				<div class="accept">
+					<div class="accept__text">Мы принимаем</div>
+					<ul class="accept__list">
+						<li><i class="ico ico_visa" title="Visa"></i></li>
+						<li><i class="ico ico_mc" title="MasterCard"></i></li>
+						<li><i class="ico ico_p" title="Diners Club"></i></li>
+						<li><i class="ico ico_amex" title="American Express"></i></li>
+						<li><i class="ico ico_jcb" title="JCB"></i></li>
+					</ul>
+				</div>
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 					</div>
 					<!-- checkbox -->
@@ -349,13 +377,13 @@
 				</div>
 				<form id="form2">
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text form__text_nowrap">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 					</div>
 					<!-- checkbox -->
@@ -421,13 +449,13 @@
 				</div>
 				<form action="" id="form3">
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 					</div>
 					<!-- checkbox -->
@@ -488,13 +516,13 @@
 				</div>
 				<form action="" id="form4">
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 					</div>
 					<!-- checkbox -->
@@ -550,13 +578,13 @@
 				</div>
 				<form action="" id="form5">
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 					</div>
 					<!-- checkbox -->
@@ -632,13 +660,13 @@
 				</div>
 				<form action="" id="form6">
 					<!-- form -->
-					<div class="form">
+					<div class="form form_wrap">
 						<div class="form__item">
 							<div class="form__label">Номер телефона</div>
 							<div class="form__field">
-								<input class="js-phone-number" type="text" name="phone" placeholder="+7">
+								<input class="js-phone-number" type="text" name="phone" placeholder="Без скобок, тире и пробелов">
 							</div>
-							<div class="form__text">Может использоваться вами для отслеживания статуса платежа</div>
+							<div class="form__text form__text_nowrap">Нужен для отслеживания Вами статуса платежа</div>
 						</div>
 						<div class="form__item form__item_alfa js-alfa-input">
 							<div class="form__label">Логин Альфа-клик</div>
@@ -691,7 +719,7 @@
 					<div class="support__row">Служба поддержки:</div>
 					<div class="support__row">
 						<p><strong>+7 (495) 983-32-79</strong> (круглосуточно) <strong class="support__col">support@platron.ru</strong></p>
-						<div class="support__small">Сервис по переводу денежных средст оказывается ООО РНКО «РИБ»</div>
+						<div class="support__small">Сервис по переводу денежных средств оказывается ООО РНКО «РИБ»</div>
 					</div>
 				</div>
 			</div>
@@ -717,7 +745,7 @@
 	<div class="popup__in js-popup-in">
 		<button class="popup__btn-close js-popup-close" type="button"></button>
 		<div class="popup__title">Отложить платеж</div>
-		<p>Укажите указать email, на который будет выслана ссылка, перейдя по которой Вы сможете завершить оплату счета.</p>
+		<p>Укажите email, на который будет выслана ссылка, перейдя по которой Вы сможете завершить оплату счета.</p>
 		<!-- form -->
 		<div class="form">
 			<div class="form__label">E-mail</div>
