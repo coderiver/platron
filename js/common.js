@@ -217,7 +217,7 @@ head.ready(function() {
 			name: "required",
 			phone: {
 				required: true,
-				minlength: 7
+				minlength: 2
 			}
 		},
 		messages: {
@@ -457,7 +457,7 @@ head.ready(function() {
 					$('.js-error-text2').hide();
 				}
 			});
-			input.on('change', function() {
+			input.on('keyup', function() {
 				var value = input.val();
 
 				if (value < 1) {
@@ -483,11 +483,44 @@ head.ready(function() {
 					$(this).removeClass('is-error');
 					$('.js-error-text2').hide();
 				}
+				input.on('blur', function() {
+					var value = input.val();
+
+					if (value < 1) {
+						$(this).addClass('is-error');
+						$('.js-error-text1').show();
+						$('.js-error-text2').hide();
+					} else {
+						$(this).removeClass('is-error');
+						$('.js-error-text1').hide();
+					}
+
+					if (regMail.test(value) || regMailC.test(value)) {
+						input.removeClass('is-error');
+						$('.js-error-text2').hide();
+						$('.js-error-text1').hide();
+					} else {
+						input.addClass('is-error');
+						$('.js-error-text2').show();
+						$('.js-error-text1').hide();
+					}
+
+					if (value.length == 0) {
+						$(this).removeClass('is-error');
+						$('.js-error-text2').hide();
+					}
 			});
 		});
 	}
 	valid_email();
 	
+	// menu mob
+	$('.js-menu, .js-opted-sel').on('click', function(){
+		$('body').toggleClass('is-open-menu');
+	});
+	$('.js-overlay').on('click', function(){
+		$('body').removeClass('is-open-menu');
+	});
 
 	// phone
 	function val_phone() {
@@ -517,13 +550,5 @@ head.ready(function() {
 		});
 	}
 	val_phone();
-
-	// menu mob
-	$('.js-menu, .js-opted-sel').on('click', function(){
-		$('body').toggleClass('is-open-menu');
-	});
-	$('.js-overlay').on('click', function(){
-		$('body').removeClass('is-open-menu');
-	});
 
 });
