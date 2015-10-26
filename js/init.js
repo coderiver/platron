@@ -1,5 +1,4 @@
-head.load("js/lib/jquery.js", 
-					"js/lib/cycle.js",
+head.load("js/lib/jquery.js",
 					"js/lib/migrate.js",
 					"js/lib/jquery.lwtCountdown-1.0.js",
 					"js/lib/jquery.validate.min.js",

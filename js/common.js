@@ -313,32 +313,32 @@ head.ready(function() {
 		placeholder: ''
 	});
 
- 	$('input[name="number"]').on('change', function() {
-		var value = $(this).val();
-		if (value.length < 19) {
-			value = value.replace('');
-			$(this).val('', value);
-		}
+ // 	$('input[name="number"]').on('change', function() {
+	// 	var value = $(this).val();
+	// 	if (value.length < 19) {
+	// 		value = value.replace('');
+	// 		$(this).val('', value);
+	// 	}
 		
-	});
+	// });
 
     // symbol month, year, cvv 
     $('input[name="month"], input[name="year"], input[name="cvv"]').on('keyup', function(){
 		var value = $(this).val();
 		var re = /[^0-9,]/;
-		if (re.test(value)) {
-			value = value.replace(re, '');
-			$(this).val('', value);
-		}
+		// if (re.test(value)) {
+		// 	value = value.replace(re, '');
+		// 	$(this).val('', value);
+		// }
 	});
 
 	// symbol month, year
 	$('input[name="month"], input[name="year"]').on('change', function(){
 		var value = $(this).val();
-		if (value < 2) {
-			value = value.replace('');
-			$(this).val('', value);
-		}
+		// if (value < 2) {
+		// 	value = value.replace('');
+		// 	$(this).val('', value);
+		// }
 	});
 
     // month
@@ -359,13 +359,13 @@ head.ready(function() {
 
 
 	// CVV
-	$('input[name="cvv"]').on('change', function(){
-		var value = $(this).val();
-		if ($(this).val() < 100) {
-			value = value.replace('');
-			$(this).val('', value);
-		}
-	});
+	// $('input[name="cvv"]').on('change', function(){
+	// 	var value = $(this).val();
+	// 	if ($(this).val() < 100) {
+	// 		value = value.replace('');
+	// 		$(this).val('', value);
+	// 	}
+	// });
 
 	// name
     $('input[name="name"]').on('keyup', function(){
@@ -415,28 +415,28 @@ head.ready(function() {
 				}
 			    
 			});
-			// input.on('keyup', function(){
-			// 	var value = input.val();
+			input.on('keyup', function(){
+				var value = input.val();
 
-			// 	if (value > 0) {
-			// 		$(this).removeClass('is-error');
-			// 		$('.js-error-text1').hide();
-			// 	}
-			// 	if (regMail.test(value) || regMailC.test(value)) {
-			// 		input.removeClass('is-error');
-			// 		$('.js-error-text2').hide();
-			// 		$('.js-error-text1').hide();
-			// 	} else {
-			// 		input.addClass('is-error');
-			// 		$('.js-error-text2').show();
-			// 		$('.js-error-text1').hide();
-			// 	}
+				if (value > 0) {
+					$(this).removeClass('is-error');
+					$('.js-error-text1').hide();
+				}
+				if (regMail.test(value) || regMailC.test(value)) {
+					input.removeClass('is-error');
+					$('.js-error-text2').hide();
+					$('.js-error-text1').hide();
+				} else {
+					input.addClass('is-error');
+					$('.js-error-text2').show();
+					$('.js-error-text1').hide();
+				}
 				
-			// 	if (value.length == 0) {
-			// 		$(this).removeClass('is-error');
-			// 		$('.js-error-text2').hide();
-			// 	}
-			// });
+				if (value.length == 0) {
+					$(this).removeClass('is-error');
+					$('.js-error-text2').hide();
+				}
+			});
 			input.on('change', function() {
 				var value = input.val();
 

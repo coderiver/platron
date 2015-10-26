@@ -235,7 +235,6 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 
 .form { margin: 20px 0; font-size: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 .form.form_mail { margin: 8px 0 0; display: none; }
-.form.form_wrap { margin: 20px -15px; }
 .form input { padding: 0 8px; height: 32px; width: 100%; font-size: 16px; color: #333333; line-height: 24px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; font-family: "Open Sans", sans-serif; font-weight: 400; border: 1px solid #cdd0d4; -moz-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); -webkit-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1); background: white; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .form input:-ms-input-placeholder { color: #bdbebe; }
 .form input:-moz-placeholder, .form input::-moz-placeholder { color: #bdbebe; opacity: 1; }
@@ -274,8 +273,9 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 @media only screen and (max-width: 540px) { .form .form__col.form__col_cvv { top: 64px; right: 10px; } }
 .form .form__field { font-size: 0; }
 .form .form__label { color: #666666; font-size: 14px; font-weight: 600; line-height: 22px; }
-.form .form__item { width: 50%; margin-bottom: 10px; padding: 0 15px; vertical-align: top; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.form .form__item { margin-left: 4%; width: 48%; vertical-align: top; display: inline-block; }
 @media only screen and (max-width: 540px) { .form .form__item { margin: 0; width: 100%; } }
+.form .form__item:first-child { margin-left: 0; }
 .form .form__item.form__item_alfa { display: none; }
 @media only screen and (max-width: 480px) { .form .form__item.form__item_alfa { margin-top: 15px; } }
 .form .form__item.is-active { display: inline-block; }
@@ -334,7 +334,6 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .bg-card.bg-card_cvv:before { position: absolute; content: ""; left: 210px; top: 30px; right: 0; height: 40px; background: black; }
 
 .info { position: absolute; right: 0; top: 54%; cursor: pointer; display: inline-block; }
-.info.info_rel { position: relative; top: auto; right: auto; }
 .info .ico { cursor: pointer; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; }
 .info:hover .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .info.is-active .ico { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
@@ -364,7 +363,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 .payment .payment__item.is-disable:hover { border: 1px solid #e5e7ea; -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03); background-image: -moz-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: -webkit-linear-gradient(270deg, #ffffff 50%, #fcfcfd 100%); background-image: linear-gradient(-180deg, #ffffff 50%, #fcfcfd 100%); }
 .payment .payment__item .price { width: 100%; }
 .payment .payment__ico { height: 65px; line-height: 65px; }
-.payment .payment__ico .ico { vertical-align: middle; }
+.payment .payment__ico .ico { line-height: 1; vertical-align: middle; }
 .payment .price { margin-top: 4px; }
 .payment .currency { line-height: 15px; }
 
@@ -421,11 +420,6 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 @media only screen and (max-width: 940px) { .popup .popup__title { margin-bottom: 10px; } }
 
 .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; cursor: pointer; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; z-index: -1; background: rgba(0, 0, 0, 0.5); -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; -webkit-transition: left 0.1s linear; transition: left 0.1s linear; }
-
-.row { *zoom: 1; }
-.row:after { content: " "; display: table; clear: both; }
-
-.is-right { float: right; }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
