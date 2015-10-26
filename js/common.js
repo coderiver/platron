@@ -123,7 +123,16 @@ head.ready(function() {
 	function payment_method(){
 		$('.js-payment').find('.js-payment-item:first').addClass("is-active");
 		$('.js-payment-item').on('click', function(){
-			var payment_item = $('.js-tabs-content.is-active .js-payment-item');
+			var payment_item 	= $('.js-tabs-content.is-active .js-payment-item'),
+				this_ 			= $(this),
+				parents 		= this_.parents('.js-tabs-content'),
+				price 			= this_.find('.price').text(),
+				currency 		= this_.find('.currency').text(),
+				checkout 		= parents.find('.checkout'),
+				checPrice 		= checkout.find('.price'),
+				checCurrency 	= checkout.find('.currency');
+				checPrice.text(price);
+				checCurrency.text(currency);
 			if(payment_item.hasClass('is-active')) {
 				payment_item.removeClass('is-active');
 				$(this).addClass('is-active');
