@@ -412,9 +412,9 @@ head.ready(function() {
 			var button = $(this).find('button[type="submit"]');
 			var regMail = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/;
 			var regMailC = /[-0-9А-Яа-я.+_]+@[-0-9А-Яа-я.+_]+\.[0-9А-Яа-я]{2,4}$/;
+
 			button.on('click', function() {
 				var value = input.val();
-
 				if (value < 1) {
 					$(this).addClass('error');
 					$('.js-error-text1').show();
@@ -433,59 +433,66 @@ head.ready(function() {
 					$('.js-error-text2').show();
 					$('.js-error-text1').hide();
 				}
-			    
 			});
+			
 			input.on('keyup', function(){
-				var value = input.val();
+				if (input.hasClass('is-selected')) {
+					input.on('keyup', function(){
+						var value = input.val();
 
-				if (value > 0) {
-					$(this).removeClass('is-error');
-					$('.js-error-text1').hide();
-				}
-				if (regMail.test(value) || regMailC.test(value)) {
-					input.removeClass('is-error');
-					$('.js-error-text2').hide();
-					$('.js-error-text1').hide();
-				} else {
-					input.addClass('is-error');
-					$('.js-error-text2').show();
-					$('.js-error-text1').hide();
-				}
-				
-				if (value.length == 0) {
-					$(this).removeClass('is-error');
-					$('.js-error-text2').hide();
+						if (value > 0) {
+							$(this).removeClass('is-error');
+							$('.js-error-text1').hide();
+						}
+						if (regMail.test(value) || regMailC.test(value)) {
+							input.removeClass('is-error');
+							$('.js-error-text2').hide();
+							$('.js-error-text1').hide();
+						} else {
+							input.addClass('is-error');
+							$('.js-error-text2').show();
+							$('.js-error-text1').hide();
+						}
+						
+						if (value.length == 0) {
+							$(this).removeClass('is-error');
+							$('.js-error-text2').hide();
+						}
+					});
+					input.on('keyup', function() {
+						var value = input.val();
+
+						if (value < 1) {
+							$(this).addClass('is-error');
+							$('.js-error-text1').show();
+							$('.js-error-text2').hide();
+						} else {
+							$(this).removeClass('is-error');
+							$('.js-error-text1').hide();
+						}
+
+						if (regMail.test(value) || regMailC.test(value)) {
+							input.removeClass('is-error');
+							$('.js-error-text2').hide();
+							$('.js-error-text1').hide();
+						} else {
+							input.addClass('is-error');
+							$('.js-error-text2').show();
+							$('.js-error-text1').hide();
+						}
+
+						if (value.length == 0) {
+							$(this).removeClass('is-error');
+							$('.js-error-text2').hide();
+						}
+					});
 				}
 			});
-			input.on('keyup', function() {
-				var value = input.val();
-
-				if (value < 1) {
-					$(this).addClass('is-error');
-					$('.js-error-text1').show();
-					$('.js-error-text2').hide();
-				} else {
-					$(this).removeClass('is-error');
-					$('.js-error-text1').hide();
-				}
-
-				if (regMail.test(value) || regMailC.test(value)) {
-					input.removeClass('is-error');
-					$('.js-error-text2').hide();
-					$('.js-error-text1').hide();
-				} else {
-					input.addClass('is-error');
-					$('.js-error-text2').show();
-					$('.js-error-text1').hide();
-				}
-
-				if (value.length == 0) {
-					$(this).removeClass('is-error');
-					$('.js-error-text2').hide();
-				}
-			});
+			
 			input.on('blur', function() {
 				var value = input.val();
+
+				$(this).addClass('is-selected');
 
 				if (value < 1) {
 					$(this).addClass('is-error');
