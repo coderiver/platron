@@ -227,6 +227,7 @@ body a { text-decoration: none; -moz-transition: all 0.1s linear; -o-transition:
 @media only screen and (max-width: 420px) { .accept { margin-top: 5px; } }
 .accept .accept__text, .accept .accept__list { vertical-align: top; display: inline-block; }
 @media only screen and (max-width: 420px) { .accept .accept__text, .accept .accept__list { text-align: center; display: block; } }
+.accept .accept__text img, .accept .accept__list img { width: 36px; height: 25px; }
 .accept .accept__text { font-size: 13px; line-height: 26px; color: #9b9b9b; }
 @media only screen and (max-width: 420px) { .accept .accept__text { margin-bottom: 3px; } }
 .accept .accept__list { margin-left: 10px; }
